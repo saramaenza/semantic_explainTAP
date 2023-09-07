@@ -46,7 +46,7 @@
                         "value": "Off",
                         "haPositiveEffectOnGoals": [
                             {
-                                "goal": "well being",
+                                "goal": "well-being",
                                 "description": "better quality of sleep"
                             },
                             {
@@ -184,6 +184,280 @@
                     ],
                 },
               ]
+            }
+        ]
+      },
+      {
+        "realName": "Devices",
+        "nodes":[
+            {
+                "realName": "TV",
+                "possibleValues": [
+                    {
+                        "value" : "On", 
+                        "haPositiveEffectOnGoals": [
+                            {
+                                "goal":"well-being",
+                                "description":"It can improve relaxation (non so se abbia senso, magari andrebbe messo come goal svago - leisure?"
+                            }
+                        ],
+                        "hasNegativeEffectOnGoals": [
+                            {
+                                "goal":"energy saving",
+                                "description":"This device can consume a significant amount of energy"
+                            },
+                            {
+                                "goal":"well-being",
+                                "description":"This device can negatively affect sleep quality"
+                            }
+                        ],
+                        "confidentlyIncreaseEnvironmentVariables": [
+                            "lighting"
+                        ],
+                        "confidentlyDecreaseEnvironmentVariables": [
+                            "darkness"
+                        ],
+                        "canIncreaseEnvironmentVariables": [
+                            "noise"
+                        ],
+                        "canDecreaseEnvironmentVariables": []
+                    },
+                    {
+                        "value" : "Off", 
+                        "haPositiveEffectOnGoals": [
+                            {
+                                "goal":"energy saving",
+                                "description":"This device can consume a significant amount of energy"
+
+                            },
+                            {
+                                "goal":"well-being",
+                                "description":"This device can negatively affect sleep quality"
+                            }
+                            ],
+                        "hasNegativeEffectOnGoals": [],
+                        "confidentlyIncreaseEnvironmentVariables": [
+                            "darkness"
+                        ],
+                        "confidentlyDecreaseEnvironmentVariables": [
+                            "lighting"
+                        ],
+                        "canIncreaseEnvironmentVariables": [],
+                        "canDecreaseEnvironmentVariables": []
+                    }
+                ]
+            },
+            {
+                "realName": "Smartphone",
+                "possibleValues": [
+                    {
+                        "value" : "On", 
+                        "haPositiveEffectOnGoals": [
+                            {
+                                "goal":"safety",
+                                "description":"It allows you to be tracked"
+                            }
+                        ],
+                        "hasNegativeEffectOnGoals": [
+                            {
+                                "goal":"well-being",
+                                "description":"This device can negatively affect sleep quality"
+                            }
+                        ],
+                        "confidentlyIncreaseEnvironmentVariables": [],
+                        "confidentlyDecreaseEnvironmentVariables": [],
+                        "canIncreaseEnvironmentVariables": [
+                            "noise"
+                        ],
+                        "canDecreaseEnvironmentVariables": []
+                    },
+                    {
+                        "value" : "Off", 
+                        "haPositiveEffectOnGoals": [
+                            {
+                                "goal":"well-being",
+                                "description":"This device can negatively affect sleep quality"
+                            }
+                        ],
+                        "hasNegativeEffectOnGoals": [
+                            {
+                                "goal":"safety",
+                                "description":"allows you to be tracked"
+                            }
+                        ],
+                        "confidentlyIncreaseEnvironmentVariables": [],
+                        "confidentlyDecreaseEnvironmentVariables": [],
+                        "canIncreaseEnvironmentVariables": [],
+                        "canDecreaseEnvironmentVariables": []
+                    }
+                ]
+            },
+            {
+                "realName": "PC",
+                "possibleValues": [
+                    {
+                        "value" : "On", 
+                        "haPositiveEffectOnGoals": [
+                            {
+                                "goal":"well-being",
+                                "description":"It can improve relaxation (non so se abbia senso, magari andrebbe messo come goal svago - leisure?"
+                            }
+                        ],
+                        "hasNegativeEffectOnGoals": [
+                            {
+                                "goal":"energy saving",
+                                "description":"This device can consume a significant amount of energy"
+                            },
+                            {
+                                "goal":"well-being",
+                                "description":"This device can negatively affect sleep quality"
+                            }
+                        ],
+                        "confidentlyIncreaseEnvironmentVariables": [
+                            "lighting"
+                        ],
+                        "confidentlyDecreaseEnvironmentVariables": [
+                            "darkness"
+                        ],
+                        "canIncreaseEnvironmentVariables": [
+                            "noise"
+                        ],
+                        "canDecreaseEnvironmentVariables": []
+                    },
+                    {
+                        "value" : "Off", 
+                        "haPositiveEffectOnGoals": [
+                            {
+                                "goal":"energy saving",
+                                "description":"This device can consume a significant amount of energy"
+
+                            },
+                            {
+                                "goal":"well-being",
+                                "description":"This device can negatively affect sleep quality"
+                            }
+                            ],
+                        "hasNegativeEffectOnGoals": [],
+                        "confidentlyIncreaseEnvironmentVariables": [
+                            "darkness"
+                        ],
+                        "confidentlyDecreaseEnvironmentVariables": [
+                            "lighting"
+                        ],
+                        "canIncreaseEnvironmentVariables": [],
+                        "canDecreaseEnvironmentVariables": []
+                    }
+                ]
+            },
+            {
+                "realName": "Tablet",
+                "possibleValues": [
+                    {
+                        "value" : "On", 
+                        "haPositiveEffectOnGoals": [
+                            {
+                                "goal":"well-being",
+                                "description":"It can improve relaxation (non so se abbia senso, magari andrebbe messo come goal svago - leisure?"
+                            }
+                        ],
+                        "hasNegativeEffectOnGoals": [
+                            {
+                                "goal":"well-being",
+                                "description":"This device can negatively affect sleep quality"
+                            }
+                        ],
+                        "confidentlyIncreaseEnvironmentVariables": [],
+                        "confidentlyDecreaseEnvironmentVariables": [],
+                        "canIncreaseEnvironmentVariables": [
+                            "noise", "lighting"
+                        ],
+                        "canDecreaseEnvironmentVariables": [
+                            "darkness"
+                        ]
+                    },
+                    {
+                        "value" : "Off", 
+                        "haPositiveEffectOnGoals": [
+                            {
+                                "goal":"well-being",
+                                "description":"This device can negatively affect sleep quality"
+                            }
+                        ],
+                        "hasNegativeEffectOnGoals": [],
+                        "confidentlyIncreaseEnvironmentVariables": [],
+                        "confidentlyDecreaseEnvironmentVariables": [],
+                        "canIncreaseEnvironmentVariables": [],
+                        "canDecreaseEnvironmentVariables": []
+                    }
+                ]
+            },
+            {
+                "realName": "Alexa Services",
+                "possibleValues": [
+                    {
+                        "value" : "News", 
+                        "haPositiveEffectOnGoals": [
+                            {
+                                "goal":"well-being",
+                                "description":"It can improve relaxation (forse?)"
+                            }
+                        ],
+                        "hasNegativeEffectOnGoals": [
+                            {
+                                "goal":"energy saving",
+                                "description":"This device can consume energy even in standby mode"
+                            }
+                        ],
+                        "confidentlyIncreaseEnvironmentVariables": [
+                            "noise"
+                        ],
+                        "confidentlyDecreaseEnvironmentVariables": [],
+                        "canIncreaseEnvironmentVariables": [],
+                        "canDecreaseEnvironmentVariables": []
+                    },
+                    {
+                        "value" : "Weather", 
+                        "haPositiveEffectOnGoals": [
+                            {
+                                "goal":"well-being",
+                                "description":"It help with the daily organization"
+                            }
+                        ],
+                        "hasNegativeEffectOnGoals": [
+                            {
+                                "goal":"energy saving",
+                                "description":"This device can consume energy even in standby mode"
+                            }
+                        ],
+                        "confidentlyIncreaseEnvironmentVariables": [
+                            "noise"
+                        ],
+                        "confidentlyDecreaseEnvironmentVariables": [],
+                        "canIncreaseEnvironmentVariables": [],
+                        "canDecreaseEnvironmentVariables": []
+                    },
+                    {
+                        "value" : "Music", 
+                        "haPositiveEffectOnGoals": [
+                            {
+                                "goal":"well-being",
+                                "description":"It can improve relaxation (non so se abbia senso, magari andrebbe messo come goal svago - leisure?"
+                            }
+                        ],
+                        "hasNegativeEffectOnGoals": [
+                            {
+                                "goal":"energy saving",
+                                "description":"This device can consume energy even in standby mode"
+                            }
+                        ],
+                        "confidentlyIncreaseEnvironmentVariables": [
+                            "noise"
+                        ],
+                        "confidentlyDecreaseEnvironmentVariables": [],
+                        "canIncreaseEnvironmentVariables": [],
+                        "canDecreaseEnvironmentVariables": []
+                    }
+                ]
             }
         ]
       }
