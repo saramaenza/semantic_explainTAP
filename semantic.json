@@ -880,6 +880,137 @@
                     ]
                 }
               ]  
+            },
+            {
+                "realName": "Entrance",
+                "attributes": [
+                    {
+                        "realName": "Light",
+                        "possibleValues": [
+                            {
+                                "value": "On",
+                                "haPositiveEffectOnGoals": [
+                                    {
+                                        "goal": "comfort",
+                                        "description": "This device makes a more comfortable environment"
+                                    },
+                                    {
+                                        "goal": "comfort",
+                                        "description": "This device can make your daily tasks easier"
+                                    },
+                                    {
+                                        "goal": "safety",
+                                        "description": "This device can prevents accidents"
+                                    },
+                                    {
+                                        "goal": "security",
+                                        "description": "This device deters criminals"
+                                    }
+                                ],
+                                "hasNegativeEffectOnGoals": [
+                                    {
+                                        "goal": "energy saving",
+                                        "description": "This device can consume a significant amount of energy"
+                                    }
+                                ],
+                                "confidentlyIncrease": [
+                                    "lighting"
+                                ],
+                                "confidentlyDecrease": [
+                                    "darkening"
+                                ],
+                                "canIncreaseEnvironmentVariables": [],
+                                "canDecreaseEnvironmentVariables": []
+                            },
+                            {
+                                "value": "Off",
+                                "haPositiveEffectOnGoals": [
+                                    {
+                                        "goal": "energy saving",
+                                        "description": "This device can consume a significant amount of energy"
+                                    }
+                                ],
+                                "hasNegativeEffectOnGoals": [
+                                    {
+                                        "goal": "comfort",
+                                        "description": "This device can make your daily tasks easier"
+                                    },
+                                    {
+                                        "goal": "safety",
+                                        "description": "This device can prevents accidents"
+                                    }
+                                ],
+                                "confidentlyIncrease": [
+                                    "darkening"
+                                ],
+                                "confidentlyDecrease": [
+                                    "lighting"
+                                ],
+                                "canIncreaseEnvironmentVariables": [],
+                                "canDecreaseEnvironmentVariables": []
+                            }
+                        ]
+                    },
+                    {
+                        "realName": "door",
+                        "possibleValues": [
+                            {
+                                "value": "Open",
+                                "haPositiveEffectOnGoals": [
+                                    {
+                                        "goal": "comfort",
+                                        "description": "This devices allows you to enter into the house"
+                                    }
+                                ],
+                                "hasNegativeEffectOnGoals": [
+                                    {
+                                        "goal": "security",
+                                        "description": "This device can allows unauthorized access"
+                                    },
+                                    {
+                                        "goal": "well-being",
+                                        "description": "This device can increases the noise from outside"
+                                    }
+                                ],
+                                "confidentlyIncrease": [],
+                                "confidentlyDecrease": [],
+                                "canIncreaseEnvironmentVariables": [
+                                    "noise"
+                                ],
+                                "canDecreaseEnvironmentVariables": [
+                                    "quiet"
+                                ]
+                            },
+                            {
+                                "value": "Close",
+                                "haPositiveEffectOnGoals": [
+                                    {
+                                        "goal": "security",
+                                        "description": "This device can allows unauthorized access"
+                                    },
+                                    {
+                                        "goal": "well-being",
+                                        "description": "This device can increases the noise from outside"
+                                    }
+                                ],
+                                "hasNegativeEffectOnGoals": [
+                                    {
+                                        "goal": "comfort",
+                                        "description": "This devices allows you to enter into the house"
+                                    }
+                                ],
+                                "confidentlyIncrease": [],
+                                "confidentlyDecrease": [],
+                                "canIncreaseEnvironmentVariables": [
+                                    "quiet"
+                                ],
+                                "canDecreaseEnvironmentVariables": [
+                                    "noise"
+                                ]
+                            }
+                        ]
+                    }
+                ]
             }
         ]
       },
