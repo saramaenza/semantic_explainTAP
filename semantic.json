@@ -14,7 +14,7 @@
                         "haPositiveEffectOnGoals": [
                             {
                                 "goal": "comfort",
-                                "description": "This device makes a more comfortable environment"
+                                "description": "This device makes a more comfortable environment ==> forse per le luci è meglio appliances di device"
                             },
                             {
                                 "goal": "comfort",
@@ -48,6 +48,12 @@
                         "canIncreaseEnvironmentVariables": [
                         ],
                         "canDecreaseEnvironmentVariables": [
+                        ],
+                        "canActivate": [
+                            {
+                                "trigger": "lightLevel ==> prova: c'è da vedere se il collegamento azioni - trigger abbia più senso qua, o magari fare a parte un file triggers", 
+                                "why": "Increase or decrease of the room lighting"
+                            }
                         ]
                     },
                     {
@@ -93,7 +99,7 @@
                             "haPositiveEffectOnGoals": [
                                 {
                                     "goal": "safety",
-                                    "description": "This device can prevents gas accumulation"
+                                    "description": "This device can prevents gas accumulation ==> finestre non sono devices, però non so come si chiamino: funrnitures? home Openings?"
                                 },
                                 {
                                     "goal": "health",
@@ -131,15 +137,15 @@
                                 }
                             ],
                             "confidentlyIncrease": [
-                                "air circulation" 
+                                "air circulation ==> penso sia meglio divider air circulation in air quality e air humidity, perché sono le cose che vengono individuate dai sensori" 
                             ],
                             "confidentlyDecrease": [
                             ],
                             "canIncreaseEnvironmentVariables": [
-                                "noise", "temperature --- ha senso?" 
+                                "noise", "temperature --- ha senso? ==> per me sì!" 
                             ],
                             "canDecreaseEnvironmentVariables": [
-                                "quiet", "temperature --- ha senso?"
+                                "quiet", "temperature --- ha senso? ==> idem"
                             ]
                         },
                         {
