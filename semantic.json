@@ -26,7 +26,7 @@
                             },
                             {
                                 "goal": "security",
-                                "description": "This device deters criminals"
+                                "description": "This device can deters criminals"
                             }
                         ],
                         "hasNegativeEffectOnGoals": [
@@ -359,7 +359,7 @@
                                 },
                                 {
                                     "goal": "security",
-                                    "description": "This device deters criminals"
+                                    "description": "This device can deters criminals"
                                 }
                             ],
                             "hasNegativeEffectOnGoals": [
@@ -715,7 +715,7 @@
                                 },
                                 {
                                     "goal": "security",
-                                    "description": "This device deters criminals"
+                                    "description": "This device can deters criminals"
                                 }
                             ],
                             "hasNegativeEffectOnGoals": [
@@ -882,8 +882,8 @@
               ]  
             },
             {
-                "realName": "Entrance",
-                "attributes": [
+               "realName": "Entrance",
+               "attributes": [
                     {
                         "realName": "Light",
                         "possibleValues": [
@@ -904,7 +904,7 @@
                                     },
                                     {
                                         "goal": "security",
-                                        "description": "This device deters criminals"
+                                        "description": "This device can deters criminals"
                                     }
                                 ],
                                 "hasNegativeEffectOnGoals": [
@@ -1007,6 +1007,82 @@
                                 "canDecreaseEnvironmentVariables": [
                                     "noise"
                                 ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+               "realName": "Corridor",
+               "attributes": [
+                    {
+                        "realName": "Led Light Strip",
+                        "possibleValues": [
+                            {
+                                "value": "On",
+                                "haPositiveEffectOnGoals": [
+                                    {
+                                        "goal": "comfort",
+                                        "description": "This device makes a more comfortable environment"
+                                    },
+                                    {
+                                        "goal": "comfort",
+                                        "description": "This device can make your daily tasks easier"
+                                    },
+                                    {
+                                        "goal": "comfort",
+                                        "description": "This device can be adjusted to create customized lighting"
+                                    },
+                                    {
+                                        "goal": "safety",
+                                        "description": "This device can prevents accidents"
+                                    },
+                                    {
+                                        "goal": "security",
+                                        "description": "This device can can deters criminals"
+                                    }
+                                ],
+                                "hasNegativeEffectOnGoals": [
+                                    {
+                                        "goal": "energy saving",
+                                        "description": "This device can consume a significant amount of energy"
+                                    }
+                                ],
+                                "confidentlyIncrease": [
+                                    "lighting"
+                                ],
+                                "confidentlyDecrease": [
+                                    "darkening"
+                                ],
+                                "canIncreaseEnvironmentVariables": [],
+                                "canDecreaseEnvironmentVariables": []
+                            },
+                            {
+                                "value": "Off",
+                                "haPositiveEffectOnGoals": [
+                                    {
+                                        "goal": "energy saving",
+                                        "description": "This device can consume a significant amount of energy"
+                                    }
+                                ],
+                                "hasNegativeEffectOnGoals": [
+                                    {
+                                        "goal": "comfort",
+                                        "description": "This device can make your daily tasks easier"
+                                    },
+                                    {
+                                        "goal": "safety",
+                                        "description": "This device can prevents accidents"
+                                    }
+                                ],
+                                "confidentlyIncrease": [
+                                    "darkening"
+                                ],
+                                "confidentlyDecrease": [
+                                    "lighting"
+                                ],
+                                "canIncreaseEnvironmentVariables": [],
+                                "canDecreaseEnvironmentVariables": []
                             }
                         ]
                     }
