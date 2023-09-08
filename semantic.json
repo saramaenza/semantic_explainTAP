@@ -48,12 +48,6 @@
                         "canIncreaseEnvironmentVariables": [
                         ],
                         "canDecreaseEnvironmentVariables": [
-                        ],
-                        "canActivate": [
-                            {
-                                "trigger": "lightLevel ==> prova: c'è da vedere se il collegamento azioni - trigger abbia più senso qua, o magari fare a parte un file triggers ==> finchè è solo l'elemento 'canActivate' ci conviene lasciarlo qua, è anche più leggibile. Se ci rendiamo conto che ci serve di più allora spostiamo tutto in un file trigger", 
-                                "why": "Increase or decrease of the room lighting"
-                            }
                         ]
                     },
                     {
@@ -89,7 +83,18 @@
                         "canDecreaseEnvironmentVariables": [
                         ]
                     }
-                  ]
+                    ],
+                    "canActivate   ==> io lo metterei qui fuori dai possibili valori, dato che l'accensione/spegnimento (o apertura/chiusura) di un dispositivo influiscono sugli stessi trigger": [
+                        {
+                            "trigger": "lightLevel ==> prova: c'è da vedere se il collegamento azioni - trigger abbia più senso qua, o magari fare a parte un file triggers ==> finchè è solo l'elemento 'canActivate' ci conviene lasciarlo qua, è anche più leggibile. Se ci rendiamo conto che ci serve di più allora spostiamo tutto in un file trigger", 
+                            "why": "Increase or decrease of the room lighting"
+                        },
+                        {
+                            "trigger": "Light  ==>  forse conviene modificare il json dei trigger per evitare questa ripetizione",
+                            "why": "Increase or decrease of the room lighting  ==> fa solo riferimento allo stato della luce"
+                        }
+                    
+                    ]
                 },
                 {
                     "realName": "AllWindow",
@@ -198,6 +203,24 @@
                                 "noise", "temperature", "air humidity"
                             ]
                         }
+                    ],
+                    "canActivate": [
+                        {
+                            "trigger": "windowSensor", 
+                            "why": "Detects the opening or closing of windows in the house"
+                        },
+                        {
+                            "trigger": "temperature",
+                            "why": "Increase or decrease of the room temperature"
+                        },
+                        {
+                            "trigger": "humidity",
+                            "why": "Increase or decrease of the room humidity"
+                        },
+                        {
+                            "trigger": "noiseLevel",
+                            "why": "Increase or decrease of the noise level"
+                        }
                     ]
                 },
                 {
@@ -275,7 +298,17 @@
                         "canDecreaseEnvironmentVariables": [
                         ]
                     }
-                  ]
+                    ],
+                    "canActivate": [
+                        {
+                            "trigger": "temperature",
+                            "why": "Increase or decrease of the room temperature"
+                        },
+                        {
+                            "trigger": "HeatingSystem",
+                            "why": "Turns on or off the heating system in the house"
+                        }
+                    ]
                 },
                 {
                     "realName": "RobotVacuumCleaner",
@@ -338,7 +371,13 @@
                         "canDecreaseEnvironmentVariables": [
                         ]
                     }
-                  ]
+                    ],
+                    "canActivate": [
+                        {
+                            "trigger": "noiseLevel",
+                            "why": "Increase or decrease of the noise level"
+                        }
+                    ]
                 }
               ]
             },
@@ -410,6 +449,17 @@
                             "canIncreaseEnvironmentVariables": [],
                             "canDecreaseEnvironmentVariables": []
                         }
+                    ],
+                    "canActivate": [
+                        {
+                            "trigger": "lightLevel ==> prova: c'è da vedere se il collegamento azioni - trigger abbia più senso qua, o magari fare a parte un file triggers ==> finchè è solo l'elemento 'canActivate' ci conviene lasciarlo qua, è anche più leggibile. Se ci rendiamo conto che ci serve di più allora spostiamo tutto in un file trigger", 
+                            "why": "Increase or decrease of the room lighting"
+                        },
+                        {
+                            "trigger": "Light  ==>  forse conviene modificare il json dei trigger per evitare questa ripetizione",
+                            "why": "Increase or decrease of the room lighting"
+                        }
+                    
                     ]
                 },
                 {
@@ -519,6 +569,24 @@
                                 "noise", "temperature", "air humidity"
                             ]
                         }
+                    ],
+                    "canActivate": [
+                        {
+                            "trigger": "windowSensor", 
+                            "why": "Detects the opening or closing of windows in the house"
+                        },
+                        {
+                            "trigger": "temperature",
+                            "why": "Increase or decrease of the room temperature"
+                        },
+                        {
+                            "trigger": "humidity",
+                            "why": "Increase or decrease of the room humidity"
+                        },
+                        {
+                            "trigger": "noiseLevel",
+                            "why": "Increase or decrease of the noise level"
+                        }
                     ]
                 },
                 {
@@ -572,6 +640,16 @@
                             "canDecreaseEnvironmentVariables": [
                                 "noise"
                             ]
+                        }
+                    ],
+                    "canActivate": [
+                        {
+                            "trigger": "noiseLevel",
+                            "why": "Increase or decrease of the noise level"
+                        },
+                        {
+                            "trigger":"CoffeeMachine",
+                            "why": "Turns on or off the coffee machine"
                         }
                     ]
                 },
@@ -640,6 +718,16 @@
                                 "noise"
                             ]
                         }
+                    ],
+                    "canActivate": [
+                        {
+                            "trigger": "noiseLevel",
+                            "why": "Increase or decrease of the noise level"
+                        },
+                        {
+                            "trigger":"fridge   ==> anche se influisce solo sullo stato del frigo, non sulla porta",
+                            "why": "Turns on or off the fridge"
+                        }
                     ]
                 },
                 {
@@ -693,6 +781,16 @@
                             "canDecreaseEnvironmentVariables": [
                                 "noise"
                             ]
+                        }
+                    ],
+                    "canActivate": [
+                        {
+                            "trigger": "noiseLevel",
+                            "why": "Increase or decrease of the noise level"
+                        },
+                        {
+                            "trigger":"Microwave   ==> anche se influisce solo sullo stato del microonde, non sulla porta",
+                            "why": "Turns on or off the microwave"
                         }
                     ]
                 }
@@ -774,6 +872,17 @@
                             "canIncreaseEnvironmentVariables": [],
                             "canDecreaseEnvironmentVariables": []
                         }
+                    ],
+                    "canActivate": [
+                        {
+                            "trigger": "lightLevel ==> prova: c'è da vedere se il collegamento azioni - trigger abbia più senso qua, o magari fare a parte un file triggers ==> finchè è solo l'elemento 'canActivate' ci conviene lasciarlo qua, è anche più leggibile. Se ci rendiamo conto che ci serve di più allora spostiamo tutto in un file trigger", 
+                            "why": "Increase or decrease of the room lighting"
+                        },
+                        {
+                            "trigger": "Light  ==>  forse conviene modificare il json dei trigger per evitare questa ripetizione",
+                            "why": "Increase or decrease of the room lighting"
+                        }
+                    
                     ]
                 },
                 {
@@ -883,6 +992,24 @@
                                 "noise", "temperature", "air humidity"
                             ]
                         }
+                    ],
+                    "canActivate": [
+                        {
+                            "trigger": "windowSensor", 
+                            "why": "Detects the opening or closing of windows in the house"
+                        },
+                        {
+                            "trigger": "temperature",
+                            "why": "Increase or decrease of the room temperature"
+                        },
+                        {
+                            "trigger": "humidity",
+                            "why": "Increase or decrease of the room humidity"
+                        },
+                        {
+                            "trigger": "noiseLevel",
+                            "why": "Increase or decrease of the noise level"
+                        }
                     ]
                 }
               ]  
@@ -955,6 +1082,17 @@
                                 "canIncreaseEnvironmentVariables": [],
                                 "canDecreaseEnvironmentVariables": []
                             }
+                        ],
+                        "canActivate": [
+                            {
+                                "trigger": "lightLevel ==> prova: c'è da vedere se il collegamento azioni - trigger abbia più senso qua, o magari fare a parte un file triggers ==> finchè è solo l'elemento 'canActivate' ci conviene lasciarlo qua, è anche più leggibile. Se ci rendiamo conto che ci serve di più allora spostiamo tutto in un file trigger", 
+                                "why": "Increase or decrease of the room lighting"
+                            },
+                            {
+                                "trigger": "Light  ==>  forse conviene modificare il json dei trigger per evitare questa ripetizione",
+                                "why": "Increase or decrease of the room lighting"
+                            }
+                        
                         ]
                     },
                     {
@@ -978,13 +1116,16 @@
                                         "description": "This device can increases the noise from outside"
                                     }
                                 ],
-                                "confidentlyIncrease": [],
-                                "confidentlyDecrease": [],
+                                "confidentlyIncrease": [
+                                    "air quality"
+                                ],
+                                "confidentlyDecrease": [
+                                ],
                                 "canIncreaseEnvironmentVariables": [
-                                    "noise"
+                                    "noise", "temperature", "air humidity"
                                 ],
                                 "canDecreaseEnvironmentVariables": [
-                                    "quiet"
+                                    "quiet", "temperature", "air humidity"
                                 ]
                             },
                             {
@@ -1005,14 +1146,35 @@
                                         "description": "This devices allows you to enter into the house"
                                     }
                                 ],
-                                "confidentlyIncrease": [],
-                                "confidentlyDecrease": [],
+                                "confidentlyIncrease": [
+                                ],
+                                "confidentlyDecrease": [
+                                    "air quality"
+                                ],
                                 "canIncreaseEnvironmentVariables": [
-                                    "quiet"
+                                    "quiet", "temperature", "air humidity"
                                 ],
                                 "canDecreaseEnvironmentVariables": [
-                                    "noise"
+                                    "noise", "temperature", "air humidity"
                                 ]
+                            }
+                        ],
+                        "canActivate": [
+                            {
+                                "trigger": "MainDoor", 
+                                "why": "Open or close the main door"
+                            },
+                            {
+                                "trigger": "temperature",
+                                "why": "Increase or decrease of the room temperature"
+                            },
+                            {
+                                "trigger": "humidity",
+                                "why": "Increase or decrease of the room humidity"
+                            },
+                            {
+                                "trigger": "noiseLevel",
+                                "why": "Increase or decrease of the noise level"
                             }
                         ]
                     }
@@ -1089,6 +1251,12 @@
                                 ],
                                 "canIncreaseEnvironmentVariables": [],
                                 "canDecreaseEnvironmentVariables": []
+                            }
+                        ],
+                        "canActivate": [
+                            {
+                                "trigger": "LedLightStrip", 
+                                "why": "Increase or decrease of the room lighting"
                             }
                         ]
                     }
@@ -1174,7 +1342,18 @@
                         "canDecreaseEnvironmentVariables": [
                         ]
                     }
-                  ]
+                    ],
+                    "canActivate": [
+                        {
+                            "trigger": "lightLevel ==> prova: c'è da vedere se il collegamento azioni - trigger abbia più senso qua, o magari fare a parte un file triggers ==> finchè è solo l'elemento 'canActivate' ci conviene lasciarlo qua, è anche più leggibile. Se ci rendiamo conto che ci serve di più allora spostiamo tutto in un file trigger", 
+                            "why": "Increase or decrease of the room lighting"
+                        },
+                        {
+                            "trigger": "Light  ==>  forse conviene modificare il json dei trigger per evitare questa ripetizione",
+                            "why": "Increase or decrease of the room lighting"
+                        }
+                    
+                    ]
                 },
                 {
                     "realName": "WindowSensor",
@@ -1283,6 +1462,24 @@
                                 "noise", "temperature", "air humidity"
                             ]
                         }
+                    ],
+                    "canActivate": [
+                        {
+                            "trigger": "windowSensor", 
+                            "why": "Detects the opening or closing of windows in the house"
+                        },
+                        {
+                            "trigger": "temperature",
+                            "why": "Increase or decrease of the room temperature"
+                        },
+                        {
+                            "trigger": "humidity",
+                            "why": "Increase or decrease of the room humidity"
+                        },
+                        {
+                            "trigger": "noiseLevel",
+                            "why": "Increase or decrease of the noise level"
+                        }
                     ]
                 }
                ]
@@ -1359,7 +1556,18 @@
                         "canDecreaseEnvironmentVariables": [
                         ]
                     }
-                  ]
+                    ],
+                    "canActivate": [
+                        {
+                            "trigger": "lightLevel ==> prova: c'è da vedere se il collegamento azioni - trigger abbia più senso qua, o magari fare a parte un file triggers ==> finchè è solo l'elemento 'canActivate' ci conviene lasciarlo qua, è anche più leggibile. Se ci rendiamo conto che ci serve di più allora spostiamo tutto in un file trigger", 
+                            "why": "Increase or decrease of the room lighting"
+                        },
+                        {
+                            "trigger": "Light  ==>  forse conviene modificare il json dei trigger per evitare questa ripetizione",
+                            "why": "Increase or decrease of the room lighting"
+                        }
+                    
+                    ]
                 },
                 {
                     "realName": "WindowSensor",
@@ -1467,6 +1675,24 @@
                             "canDecreaseEnvironmentVariables": [
                                 "noise", "temperature", "air humidity"
                             ]
+                        }
+                    ],
+                    "canActivate": [
+                        {
+                            "trigger": "windowSensor", 
+                            "why": "Detects the opening or closing of windows in the house"
+                        },
+                        {
+                            "trigger": "temperature",
+                            "why": "Increase or decrease of the room temperature"
+                        },
+                        {
+                            "trigger": "humidity",
+                            "why": "Increase or decrease of the room humidity"
+                        },
+                        {
+                            "trigger": "noiseLevel",
+                            "why": "Increase or decrease of the noise level"
                         }
                     ]
                 }
