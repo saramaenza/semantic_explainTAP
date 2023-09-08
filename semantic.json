@@ -14,7 +14,7 @@
                         "haPositiveEffectOnGoals": [
                             {
                                 "goal": "comfort",
-                                "description": "This device makes a more comfortable environment ==> forse per le luci è meglio appliances di device"
+                                "description": "This device makes a more comfortable environment ==> forse per le luci è meglio appliances di device -- dici quindi di modificare anche il contesto delle azioni?"
                             },
                             {
                                 "goal": "comfort",
@@ -51,7 +51,7 @@
                         ],
                         "canActivate": [
                             {
-                                "trigger": "lightLevel ==> prova: c'è da vedere se il collegamento azioni - trigger abbia più senso qua, o magari fare a parte un file triggers", 
+                                "trigger": "lightLevel ==> prova: c'è da vedere se il collegamento azioni - trigger abbia più senso qua, o magari fare a parte un file triggers ==> finchè è solo l'elemento 'canActivate' ci conviene lasciarlo qua, è anche più leggibile. Se ci rendiamo conto che ci serve di più allora spostiamo tutto in un file trigger", 
                                 "why": "Increase or decrease of the room lighting"
                             }
                         ]
@@ -99,15 +99,15 @@
                             "haPositiveEffectOnGoals": [
                                 {
                                     "goal": "safety",
-                                    "description": "This device can prevents gas accumulation ==> finestre non sono devices, però non so come si chiamino: funrnitures? home Openings?"
+                                    "description": "This home opening can prevents gas accumulation ==> finestre non sono devices, però non so come si chiamino: funrnitures? home Openings? -- avevo scritto devices perchè in realtà fa riferimento al sensore finestra, infatti negli altri casi si ha realName='windowSensor'"
                                 },
                                 {
                                     "goal": "health",
-                                    "description": "This device can improve air quality"
+                                    "description": "This home opening  can improve air quality"
                                 },
                                 {
                                     "goal": "comfort",
-                                    "description": "This device can regulates the internal temperature"
+                                    "description": "This home opening  can regulates the internal temperature"
                                 },
                                 {
                                     "goal": "energy saving",
@@ -137,15 +137,15 @@
                                 }
                             ],
                             "confidentlyIncrease": [
-                                "air circulation ==> penso sia meglio divider air circulation in air quality e air humidity, perché sono le cose che vengono individuate dai sensori" 
+                                "air quality"
                             ],
                             "confidentlyDecrease": [
                             ],
                             "canIncreaseEnvironmentVariables": [
-                                "noise", "temperature --- ha senso? ==> per me sì!" 
+                                "noise", "temperature", "air humidity"
                             ],
                             "canDecreaseEnvironmentVariables": [
-                                "quiet", "temperature --- ha senso? ==> idem"
+                                "quiet", "temperature", "air humidity"
                             ]
                         },
                         {
@@ -189,13 +189,13 @@
                             "confidentlyIncrease": [
                             ],
                             "confidentlyDecrease": [
-                                "air circulation"
+                                "air quality"
                             ],
                             "canIncreaseEnvironmentVariables": [
-                                "quiet", "temperature --- ha senso?"
+                                "quiet", "temperature", "air humidity"
                             ],
                             "canDecreaseEnvironmentVariables": [
-                                "noise", "temperature --- ha senso?"
+                                "noise", "temperature", "air humidity"
                             ]
                         }
                     ]
@@ -458,15 +458,15 @@
                                 }
                             ],
                             "confidentlyIncrease": [
-                                "air circulation" 
+                                "air quality"
                             ],
                             "confidentlyDecrease": [
                             ],
                             "canIncreaseEnvironmentVariables": [
-                                "noise", "temperature --- ha senso?" 
+                                "noise", "temperature", "air humidity"
                             ],
                             "canDecreaseEnvironmentVariables": [
-                                "quiet", "temperature --- ha senso?"
+                                "quiet", "temperature", "air humidity"
                             ]
                         },
                         {
@@ -510,13 +510,13 @@
                             "confidentlyIncrease": [
                             ],
                             "confidentlyDecrease": [
-                                "air circulation"
+                                "air quality"
                             ],
                             "canIncreaseEnvironmentVariables": [
-                                "quiet", "temperature --- ha senso?"
+                                "quiet", "temperature", "air humidity"
                             ],
                             "canDecreaseEnvironmentVariables": [
-                                "noise", "temperature --- ha senso?"
+                                "noise", "temperature", "air humidity"
                             ]
                         }
                     ]
@@ -822,15 +822,15 @@
                                 }
                             ],
                             "confidentlyIncrease": [
-                                "air circulation" 
+                                "air quality"
                             ],
                             "confidentlyDecrease": [
                             ],
                             "canIncreaseEnvironmentVariables": [
-                                "noise", "temperature --- ha senso?" 
+                                "noise", "temperature", "air humidity"
                             ],
                             "canDecreaseEnvironmentVariables": [
-                                "quiet", "temperature --- ha senso?"
+                                "quiet", "temperature", "air humidity"
                             ]
                         },
                         {
@@ -874,13 +874,13 @@
                             "confidentlyIncrease": [
                             ],
                             "confidentlyDecrease": [
-                                "air circulation"
+                                "air quality"
                             ],
                             "canIncreaseEnvironmentVariables": [
-                                "quiet", "temperature --- ha senso?"
+                                "quiet", "temperature", "air humidity"
                             ],
                             "canDecreaseEnvironmentVariables": [
-                                "noise", "temperature --- ha senso?"
+                                "noise", "temperature", "air humidity"
                             ]
                         }
                     ]
@@ -1222,15 +1222,15 @@
                                 }
                             ],
                             "confidentlyIncrease": [
-                                "air circulation" 
+                                "air quality"
                             ],
                             "confidentlyDecrease": [
                             ],
                             "canIncreaseEnvironmentVariables": [
-                                "noise", "temperature --- ha senso?" 
+                                "noise", "temperature", "air humidity"
                             ],
                             "canDecreaseEnvironmentVariables": [
-                                "quiet", "temperature --- ha senso?"
+                                "quiet", "temperature", "air humidity"
                             ]
                         },
                         {
@@ -1274,13 +1274,13 @@
                             "confidentlyIncrease": [
                             ],
                             "confidentlyDecrease": [
-                                "air circulation"
+                                "air quality"
                             ],
                             "canIncreaseEnvironmentVariables": [
-                                "quiet", "temperature --- ha senso?"
+                                "quiet", "temperature", "air humidity"
                             ],
                             "canDecreaseEnvironmentVariables": [
-                                "noise", "temperature --- ha senso?"
+                                "noise", "temperature", "air humidity"
                             ]
                         }
                     ]
@@ -1407,15 +1407,15 @@
                                 }
                             ],
                             "confidentlyIncrease": [
-                                "air circulation" 
+                                "air quality"
                             ],
                             "confidentlyDecrease": [
                             ],
                             "canIncreaseEnvironmentVariables": [
-                                "noise", "temperature --- ha senso?" 
+                                "noise", "temperature", "air humidity"
                             ],
                             "canDecreaseEnvironmentVariables": [
-                                "quiet", "temperature --- ha senso?"
+                                "quiet", "temperature", "air humidity"
                             ]
                         },
                         {
@@ -1459,13 +1459,13 @@
                             "confidentlyIncrease": [
                             ],
                             "confidentlyDecrease": [
-                                "air circulation"
+                                "air quality"
                             ],
                             "canIncreaseEnvironmentVariables": [
-                                "quiet", "temperature --- ha senso?"
+                                "quiet", "temperature", "air humidity"
                             ],
                             "canDecreaseEnvironmentVariables": [
-                                "noise", "temperature --- ha senso?"
+                                "noise", "temperature", "air humidity"
                             ]
                         }
                     ]
@@ -1485,7 +1485,7 @@
                         "haPositiveEffectOnGoals": [
                             {
                                 "goal":"well-being",
-                                "description":"It can improve relaxation (non so se abbia senso, magari andrebbe messo come goal svago - leisure?"
+                                "description":"It can improve relaxation (non so se abbia senso, magari andrebbe messo come goal svago - leisure? ==> secondo me 'svago' fa parte del well-being in quanto contribuisce al benessere, io lo lascerei così"
                             }
                         ],
                         "hasNegativeEffectOnGoals": [
@@ -1686,7 +1686,7 @@
                         "haPositiveEffectOnGoals": [
                             {
                                 "goal":"well-being",
-                                "description":"It can improve relaxation (forse?)"
+                                "description":"It can improve relaxation (forse? ==> si, alla fine è un dispositivo che può intrattenere e svagare)"
                             }
                         ],
                         "hasNegativeEffectOnGoals": [
