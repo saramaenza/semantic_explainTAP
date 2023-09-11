@@ -14,7 +14,7 @@
                         "haPositiveEffectOnGoals": [
                             {
                                 "goal": "comfort",
-                                "description": "This device makes a more comfortable environment ==> forse per le luci è meglio appliances di device -- dici quindi di modificare anche il contesto delle azioni?"
+                                "description": "This device makes a more comfortable environment ==> forse per le luci è meglio appliances di device -- dici quindi di modificare anche il contesto delle azioni? ==> no solo la descrizione. Penso che questo campo potrà eventualmente essere usato per generare spiegazioni lato utente, sicché vanno bene descrizioni user friendly"
                             },
                             {
                                 "goal": "comfort",
@@ -22,11 +22,11 @@
                             },
                             {
                                 "goal": "safety",
-                                "description": "This device can prevents accidents"
+                                "description": "This device can prevent accidents"
                             },
                             {
                                 "goal": "security",
-                                "description": "This device can deters criminals"
+                                "description": "This device can deter criminals"
                             }
                         ],
                         "hasNegativeEffectOnGoals": [
@@ -69,7 +69,7 @@
                             },
                             {
                                 "goal": "safety",
-                                "description": "This device can prevents accidents"
+                                "description": "This device can prevent accidents"
                             }
                         ],
                         "confidentlyIncrease": [
@@ -84,13 +84,13 @@
                         ]
                     }
                     ],
-                    "canActivate   ==> io lo metterei qui fuori dai possibili valori, dato che l'accensione/spegnimento (o apertura/chiusura) di un dispositivo influiscono sugli stessi trigger": [
+                    "canActivate   ==> io lo metterei qui fuori dai possibili valori, dato che l'accensione/spegnimento (o apertura/chiusura) di un dispositivo influiscono sugli stessi trigger ==> ottimo!": [
                         {
-                            "trigger": "lightLevel ==> prova: c'è da vedere se il collegamento azioni - trigger abbia più senso qua, o magari fare a parte un file triggers ==> finchè è solo l'elemento 'canActivate' ci conviene lasciarlo qua, è anche più leggibile. Se ci rendiamo conto che ci serve di più allora spostiamo tutto in un file trigger", 
+                            "trigger": "lightLevel ==> prova: c'è da vedere se il collegamento azioni - trigger abbia più senso qua, o magari fare a parte un file triggers ==> finchè è solo l'elemento 'canActivate' ci conviene lasciarlo qua, è anche più leggibile. Se ci rendiamo conto che ci serve di più allora spostiamo tutto in un file trigger ==> Per me ok", 
                             "why": "Increase or decrease of the room lighting"
                         },
                         {
-                            "trigger": "Light  ==>  forse conviene modificare il json dei trigger per evitare questa ripetizione",
+                            "trigger": "Light  ==>  forse conviene modificare il json dei trigger per evitare questa ripetizione ==> Ma questo non fa riferimento al light state sotto technology? In questo caso sarebbe l'accensione o spengimento, non è affetta dal livello di luce",
                             "why": "Increase or decrease of the room lighting  ==> fa solo riferimento allo stato della luce"
                         }
                     
@@ -104,7 +104,7 @@
                             "haPositiveEffectOnGoals": [
                                 {
                                     "goal": "safety",
-                                    "description": "This home opening can prevents gas accumulation ==> finestre non sono devices, però non so come si chiamino: funrnitures? home Openings? -- avevo scritto devices perchè in realtà fa riferimento al sensore finestra, infatti negli altri casi si ha realName='windowSensor'"
+                                    "description": "This home opening can prevent gas accumulation ==> finestre non sono devices, però non so come si chiamino: funrnitures? home Openings? -- avevo scritto devices perchè in realtà fa riferimento al sensore finestra, infatti negli altri casi si ha realName='windowSensor' ==> Okk, penso la meglio sia pensare lato utente quale può essere la descrizione migliore"
                                 },
                                 {
                                     "goal": "health",
@@ -138,11 +138,11 @@
                                 },
                                 {
                                     "goal": "energy saving",
-                                    "description": "This device can consume a significant amount of energy if temperature systems are on"
+                                    "description": "This device can consume a significant amount of energy if temperature (heating or cooling) systems are on ==> Qua si apre un altro aspetto: queesto effetto negativo si verifica solo in presenza di altre azioni, potrebbe avere senso un campo per elencarle?"
                                 }
                             ],
                             "confidentlyIncrease": [
-                                "air quality"
+                                "air quality ==> Forse è meglio sotto canIncrease, perché dipende da dove vivi non è detto che l'aria migliori"
                             ],
                             "confidentlyDecrease": [
                             ],
@@ -158,7 +158,7 @@
                             "haPositiveEffectOnGoals": [
                                 {
                                     "goal": "well-being",
-                                    "description": "This device does not protect against weather events"
+                                    "description": "This device does not protect against weather events ==> Queste descrizioni sono da girare in positivo?"
                                 },
                                 {
                                     "goal": "well-being",
@@ -194,7 +194,7 @@
                             "confidentlyIncrease": [
                             ],
                             "confidentlyDecrease": [
-                                "air quality"
+                                "air quality ==> Stesso per sopra, forse meglio in can?"
                             ],
                             "canIncreaseEnvironmentVariables": [
                                 "quiet", "temperature", "air humidity"
@@ -306,7 +306,7 @@
                         },
                         {
                             "trigger": "HeatingSystem",
-                            "why": "Turns on or off the heating system in the house"
+                            "why": "Turns on or off the heating system in the house ==> Stesso caso delle luci, non so se ha senso metterla perché la temp non causa (direttamente) l'accensione o spengimento del riscaldamento "
                         }
                     ]
                 },
@@ -376,6 +376,10 @@
                         {
                             "trigger": "noiseLevel",
                             "why": "Increase or decrease of the noise level"
+                        },
+                        {
+                            "trigger": "airQualityLevel ==> Attualmente non è nel contesto",
+                            "why": "Can increase the air quality level"
                         }
                     ]
                 }
@@ -400,11 +404,11 @@
                                 },
                                 {
                                     "goal": "safety",
-                                    "description": "This device can prevents accidents"
+                                    "description": "This device can prevent accidents"
                                 },
                                 {
                                     "goal": "security",
-                                    "description": "This device can deters criminals"
+                                    "description": "This device can deter criminals"
                                 }
                             ],
                             "hasNegativeEffectOnGoals": [
