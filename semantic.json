@@ -14,7 +14,7 @@
                         "haPositiveEffectOnGoals": [
                             {
                                 "goal": "comfort",
-                                "description": "This device makes a more comfortable environment ==> forse per le luci è meglio appliances di device -- dici quindi di modificare anche il contesto delle azioni? ==> no solo la descrizione. Penso che questo campo potrà eventualmente essere usato per generare spiegazioni lato utente, sicché vanno bene descrizioni user friendly"
+                                "description": "This device makes a more comfortable environment"
                             },
                             {
                                 "goal": "comfort",
@@ -84,16 +84,11 @@
                         ]
                     }
                     ],
-                    "canActivate   ==> io lo metterei qui fuori dai possibili valori, dato che l'accensione/spegnimento (o apertura/chiusura) di un dispositivo influiscono sugli stessi trigger ==> ottimo!": [
+                    "canActivate": [
                         {
-                            "trigger": "lightLevel ==> prova: c'è da vedere se il collegamento azioni - trigger abbia più senso qua, o magari fare a parte un file triggers ==> finchè è solo l'elemento 'canActivate' ci conviene lasciarlo qua, è anche più leggibile. Se ci rendiamo conto che ci serve di più allora spostiamo tutto in un file trigger ==> Per me ok", 
+                            "trigger": "lightLevel", 
                             "why": "Increase or decrease of the room lighting"
-                        },
-                        {
-                            "trigger": "Light  ==>  forse conviene modificare il json dei trigger per evitare questa ripetizione ==> Ma questo non fa riferimento al light state sotto technology? In questo caso sarebbe l'accensione o spengimento, non è affetta dal livello di luce",
-                            "why": "Increase or decrease of the room lighting  ==> fa solo riferimento allo stato della luce"
-                        }
-                    
+                        } 
                     ]
                 },
                 {
@@ -104,50 +99,59 @@
                             "haPositiveEffectOnGoals": [
                                 {
                                     "goal": "safety",
-                                    "description": "This home opening can prevent gas accumulation ==> finestre non sono devices, però non so come si chiamino: funrnitures? home Openings? -- avevo scritto devices perchè in realtà fa riferimento al sensore finestra, infatti negli altri casi si ha realName='windowSensor' ==> Okk, penso la meglio sia pensare lato utente quale può essere la descrizione migliore"
+                                    "description": "This window can prevent gas accumulation"
                                 },
                                 {
                                     "goal": "health",
-                                    "description": "This home opening  can improve air quality"
+                                    "description": "This window can improve air quality"
                                 },
                                 {
                                     "goal": "comfort",
-                                    "description": "This home opening  can regulates the internal temperature"
+                                    "description": "This window can regulates the internal temperature"
                                 },
                                 {
                                     "goal": "energy saving",
-                                    "description": "This device can allow the temperature system to be switched off"
+                                    "description": "This window can allow the temperature system to be switched off"
                                 }
                             ],
                             "hasNegativeEffectOnGoals": [
                                 {
                                     "goal": "well-being",
-                                    "description": "This device can increases the noise from outside"
+                                    "description": "This window can increases the noise from outside"
                                 },
                                 {
                                     "goal": "well-being",
-                                    "description": "This device does not protect against weather events"
+                                    "description": "This window does not protect against weather events"
                                 },
                                 {
                                     "goal": "comfort",
-                                    "description": "This device can make the room too cold or too hot"
+                                    "description": "This window can make the room too cold or too hot"
                                 },
                                 {
                                     "goal": "security",
-                                    "description": "This device can allows unauthorized access"
+                                    "description": "This window can allows unauthorized access"
                                 },
                                 {
                                     "goal": "energy saving",
-                                    "description": "This device can consume a significant amount of energy if temperature (heating or cooling) systems are on ==> Qua si apre un altro aspetto: queesto effetto negativo si verifica solo in presenza di altre azioni, potrebbe avere senso un campo per elencarle?"
+                                    "description": "This window can consume a significant amount of energy if temperature (heating or cooling) systems are on",
+                                    "ifAction": [
+                                        {
+                                            "action": "HeatingSystem",
+                                            "value": "On"
+                                        },
+                                        {
+                                            "action": "CoolingSystem  ==> attualmente non c'è nel contesto",
+                                            "value": "On"
+                                        }
+                                    ]
                                 }
                             ],
                             "confidentlyIncrease": [
-                                "air quality ==> Forse è meglio sotto canIncrease, perché dipende da dove vivi non è detto che l'aria migliori"
                             ],
                             "confidentlyDecrease": [
                             ],
                             "canIncreaseEnvironmentVariables": [
-                                "noise", "temperature", "air humidity"
+                                "noise", "temperature", "air humidity", "air quality"
                             ],
                             "canDecreaseEnvironmentVariables": [
                                 "quiet", "temperature", "air humidity"
@@ -158,57 +162,52 @@
                             "haPositiveEffectOnGoals": [
                                 {
                                     "goal": "well-being",
-                                    "description": "This device does not protect against weather events ==> Queste descrizioni sono da girare in positivo?"
+                                    "description": "This window protects against weather events"
                                 },
                                 {
                                     "goal": "well-being",
-                                    "description": "This device can increases the noise from outside"
+                                    "description": "This window can increases the noise from outside"
                                 },
                                 {
                                     "goal": "comfort",
-                                    "description": "This device can make a more stable internal temperature"
+                                    "description": "This window can make a more stable internal temperature"
                                 },
                                 {
                                     "goal": "security",
-                                    "description": "This device can allows unauthorized access"
+                                    "description": "This window can allows unauthorized access"
                                 },
                                 {
                                     "goal": "energy saving",
-                                    "description": "This device can consume a significant amount of energy if temperature systems are on"
+                                    "description": "This window can consume a significant amount of energy if temperature systems are on"
                                 }
                             ],
                             "hasNegativeEffectOnGoals": [
                                 {
                                     "goal": "safety",
-                                    "description": "This device can prevents gas accumulation"
+                                    "description": "This window can prevents gas accumulation"
                                 },
                                 {
                                     "goal": "health",
-                                    "description": "This device can improve air quality"
+                                    "description": "This window can improve air quality"
                                 },
                                 {
                                     "goal": "comfort",
-                                    "description": "This device can make the room too cold or too hot"
+                                    "description": "This window can make the room too cold or too hot"
                                 }
                             ],
                             "confidentlyIncrease": [
                             ],
                             "confidentlyDecrease": [
-                                "air quality ==> Stesso per sopra, forse meglio in can?"
                             ],
                             "canIncreaseEnvironmentVariables": [
                                 "quiet", "temperature", "air humidity"
                             ],
                             "canDecreaseEnvironmentVariables": [
-                                "noise", "temperature", "air humidity"
+                                "noise", "temperature", "air humidity", "air quality"
                             ]
                         }
                     ],
                     "canActivate": [
-                        {
-                            "trigger": "windowSensor", 
-                            "why": "Detects the opening or closing of windows in the house"
-                        },
                         {
                             "trigger": "temperature",
                             "why": "Increase or decrease of the room temperature"
@@ -220,6 +219,10 @@
                         {
                             "trigger": "noiseLevel",
                             "why": "Increase or decrease of the noise level"
+                        },
+                        {
+                            "trigger": "securityIntrusion",
+                            "why": "Open window can allow unauthorized access"
                         }
                     ]
                 },
@@ -303,10 +306,6 @@
                         {
                             "trigger": "temperature",
                             "why": "Increase or decrease of the room temperature"
-                        },
-                        {
-                            "trigger": "HeatingSystem",
-                            "why": "Turns on or off the heating system in the house ==> Stesso caso delle luci, non so se ha senso metterla perché la temp non causa (direttamente) l'accensione o spengimento del riscaldamento "
                         }
                     ]
                 },
@@ -456,14 +455,9 @@
                     ],
                     "canActivate": [
                         {
-                            "trigger": "lightLevel ==> prova: c'è da vedere se il collegamento azioni - trigger abbia più senso qua, o magari fare a parte un file triggers ==> finchè è solo l'elemento 'canActivate' ci conviene lasciarlo qua, è anche più leggibile. Se ci rendiamo conto che ci serve di più allora spostiamo tutto in un file trigger", 
-                            "why": "Increase or decrease of the room lighting"
-                        },
-                        {
-                            "trigger": "Light  ==>  forse conviene modificare il json dei trigger per evitare questa ripetizione",
+                            "trigger": "lightLevel", 
                             "why": "Increase or decrease of the room lighting"
                         }
-                    
                     ]
                 },
                 {
@@ -474,41 +468,41 @@
                             "haPositiveEffectOnGoals": [
                                 {
                                     "goal": "safety",
-                                    "description": "This device can prevents gas accumulation"
+                                    "description": "This window can prevents gas accumulation"
                                 },
                                 {
                                     "goal": "health",
-                                    "description": "This device can improve air quality"
+                                    "description": "This window can improve air quality"
                                 },
                                 {
                                     "goal": "comfort",
-                                    "description": "This device can regulates the internal temperature"
+                                    "description": "This window can regulates the internal temperature"
                                 },
                                 {
                                     "goal": "energy saving",
-                                    "description": "This device can allow the temperature system to be switched off"
+                                    "description": "This window can allow the temperature system to be switched off"
                                 }
                             ],
                             "hasNegativeEffectOnGoals": [
                                 {
                                     "goal": "well-being",
-                                    "description": "This device can increases the noise from outside"
+                                    "description": "This window can increases the noise from outside"
                                 },
                                 {
                                     "goal": "well-being",
-                                    "description": "This device does not protect against weather events"
+                                    "description": "This window does not protect against weather events"
                                 },
                                 {
                                     "goal": "comfort",
-                                    "description": "This device can make the room too cold or too hot"
+                                    "description": "This window can make the room too cold or too hot"
                                 },
                                 {
                                     "goal": "security",
-                                    "description": "This device can allows unauthorized access"
+                                    "description": "This window can allows unauthorized access"
                                 },
                                 {
                                     "goal": "energy saving",
-                                    "description": "This device can consume a significant amount of energy if temperature systems are on"
+                                    "description": "This window can consume a significant amount of energy if temperature systems are on"
                                 }
                             ],
                             "confidentlyIncrease": [
@@ -528,37 +522,37 @@
                             "haPositiveEffectOnGoals": [
                                 {
                                     "goal": "well-being",
-                                    "description": "This device does not protect against weather events"
+                                    "description": "This window does not protect against weather events"
                                 },
                                 {
                                     "goal": "well-being",
-                                    "description": "This device can increases the noise from outside"
+                                    "description": "This window can increases the noise from outside"
                                 },
                                 {
                                     "goal": "comfort",
-                                    "description": "This device can make a more stable internal temperature"
+                                    "description": "This window can make a more stable internal temperature"
                                 },
                                 {
                                     "goal": "security",
-                                    "description": "This device can allows unauthorized access"
+                                    "description": "This window can allows unauthorized access"
                                 },
                                 {
                                     "goal": "energy saving",
-                                    "description": "This device can consume a significant amount of energy if temperature systems are on"
+                                    "description": "This window can consume a significant amount of energy if temperature systems are on"
                                 }
                             ],
                             "hasNegativeEffectOnGoals": [
                                 {
                                     "goal": "safety",
-                                    "description": "This device can prevents gas accumulation"
+                                    "description": "This window can prevents gas accumulation"
                                 },
                                 {
                                     "goal": "health",
-                                    "description": "This device can improve air quality"
+                                    "description": "This window can improve air quality"
                                 },
                                 {
                                     "goal": "comfort",
-                                    "description": "This device can make the room too cold or too hot"
+                                    "description": "This window can make the room too cold or too hot"
                                 }
                             ],
                             "confidentlyIncrease": [
@@ -576,10 +570,6 @@
                     ],
                     "canActivate": [
                         {
-                            "trigger": "windowSensor", 
-                            "why": "Detects the opening or closing of windows in the house"
-                        },
-                        {
                             "trigger": "temperature",
                             "why": "Increase or decrease of the room temperature"
                         },
@@ -590,6 +580,10 @@
                         {
                             "trigger": "noiseLevel",
                             "why": "Increase or decrease of the noise level"
+                        },
+                        {
+                            "trigger": "securityIntrusion",
+                            "why": "Open window can allow unauthorized access"
                         }
                     ]
                 },
@@ -650,10 +644,6 @@
                         {
                             "trigger": "noiseLevel",
                             "why": "Increase or decrease of the noise level"
-                        },
-                        {
-                            "trigger":"CoffeeMachine",
-                            "why": "Turns on or off the coffee machine"
                         }
                     ]
                 },
@@ -727,10 +717,6 @@
                         {
                             "trigger": "noiseLevel",
                             "why": "Increase or decrease of the noise level"
-                        },
-                        {
-                            "trigger":"fridge   ==> anche se influisce solo sullo stato del frigo, non sulla porta",
-                            "why": "Turns on or off the fridge"
                         }
                     ]
                 },
@@ -791,10 +777,6 @@
                         {
                             "trigger": "noiseLevel",
                             "why": "Increase or decrease of the noise level"
-                        },
-                        {
-                            "trigger":"Microwave   ==> anche se influisce solo sullo stato del microonde, non sulla porta",
-                            "why": "Turns on or off the microwave"
                         }
                     ]
                 }
@@ -879,14 +861,9 @@
                     ],
                     "canActivate": [
                         {
-                            "trigger": "lightLevel ==> prova: c'è da vedere se il collegamento azioni - trigger abbia più senso qua, o magari fare a parte un file triggers ==> finchè è solo l'elemento 'canActivate' ci conviene lasciarlo qua, è anche più leggibile. Se ci rendiamo conto che ci serve di più allora spostiamo tutto in un file trigger", 
-                            "why": "Increase or decrease of the room lighting"
-                        },
-                        {
-                            "trigger": "Light  ==>  forse conviene modificare il json dei trigger per evitare questa ripetizione",
+                            "trigger": "lightLevel", 
                             "why": "Increase or decrease of the room lighting"
                         }
-                    
                     ]
                 },
                 {
@@ -897,41 +874,41 @@
                             "haPositiveEffectOnGoals": [
                                 {
                                     "goal": "safety",
-                                    "description": "This device can prevents gas accumulation"
+                                    "description": "This window can prevents gas accumulation"
                                 },
                                 {
                                     "goal": "health",
-                                    "description": "This device can improve air quality"
+                                    "description": "This window can improve air quality"
                                 },
                                 {
                                     "goal": "comfort",
-                                    "description": "This device can regulates the internal temperature"
+                                    "description": "This window can regulates the internal temperature"
                                 },
                                 {
                                     "goal": "energy saving",
-                                    "description": "This device can allow the temperature system to be switched off"
+                                    "description": "This window can allow the temperature system to be switched off"
                                 }
                             ],
                             "hasNegativeEffectOnGoals": [
                                 {
                                     "goal": "well-being",
-                                    "description": "This device can increases the noise from outside"
+                                    "description": "This window can increases the noise from outside"
                                 },
                                 {
                                     "goal": "well-being",
-                                    "description": "This device does not protect against weather events"
+                                    "description": "This window does not protect against weather events"
                                 },
                                 {
                                     "goal": "comfort",
-                                    "description": "This device can make the room too cold or too hot"
+                                    "description": "This window can make the room too cold or too hot"
                                 },
                                 {
                                     "goal": "security",
-                                    "description": "This device can allows unauthorized access"
+                                    "description": "This window can allows unauthorized access"
                                 },
                                 {
                                     "goal": "energy saving",
-                                    "description": "This device can consume a significant amount of energy if temperature systems are on"
+                                    "description": "This window can consume a significant amount of energy if temperature systems are on"
                                 }
                             ],
                             "confidentlyIncrease": [
@@ -951,37 +928,37 @@
                             "haPositiveEffectOnGoals": [
                                 {
                                     "goal": "well-being",
-                                    "description": "This device does not protect against weather events"
+                                    "description": "This window does not protect against weather events"
                                 },
                                 {
                                     "goal": "well-being",
-                                    "description": "This device can increases the noise from outside"
+                                    "description": "This window can increases the noise from outside"
                                 },
                                 {
                                     "goal": "comfort",
-                                    "description": "This device can make a more stable internal temperature"
+                                    "description": "This window can make a more stable internal temperature"
                                 },
                                 {
                                     "goal": "security",
-                                    "description": "This device can allows unauthorized access"
+                                    "description": "This window can allows unauthorized access"
                                 },
                                 {
                                     "goal": "energy saving",
-                                    "description": "This device can consume a significant amount of energy if temperature systems are on"
+                                    "description": "This window can consume a significant amount of energy if temperature systems are on"
                                 }
                             ],
                             "hasNegativeEffectOnGoals": [
                                 {
                                     "goal": "safety",
-                                    "description": "This device can prevents gas accumulation"
+                                    "description": "This window can prevents gas accumulation"
                                 },
                                 {
                                     "goal": "health",
-                                    "description": "This device can improve air quality"
+                                    "description": "This window can improve air quality"
                                 },
                                 {
                                     "goal": "comfort",
-                                    "description": "This device can make the room too cold or too hot"
+                                    "description": "This window can make the room too cold or too hot"
                                 }
                             ],
                             "confidentlyIncrease": [
@@ -1089,11 +1066,7 @@
                         ],
                         "canActivate": [
                             {
-                                "trigger": "lightLevel ==> prova: c'è da vedere se il collegamento azioni - trigger abbia più senso qua, o magari fare a parte un file triggers ==> finchè è solo l'elemento 'canActivate' ci conviene lasciarlo qua, è anche più leggibile. Se ci rendiamo conto che ci serve di più allora spostiamo tutto in un file trigger", 
-                                "why": "Increase or decrease of the room lighting"
-                            },
-                            {
-                                "trigger": "Light  ==>  forse conviene modificare il json dei trigger per evitare questa ripetizione",
+                                "trigger": "lightLevel", 
                                 "why": "Increase or decrease of the room lighting"
                             }
                         
@@ -1164,10 +1137,6 @@
                             }
                         ],
                         "canActivate": [
-                            {
-                                "trigger": "MainDoor", 
-                                "why": "Open or close the main door"
-                            },
                             {
                                 "trigger": "temperature",
                                 "why": "Increase or decrease of the room temperature"
@@ -1256,12 +1225,6 @@
                                 "canIncreaseEnvironmentVariables": [],
                                 "canDecreaseEnvironmentVariables": []
                             }
-                        ],
-                        "canActivate": [
-                            {
-                                "trigger": "LedLightStrip", 
-                                "why": "Increase or decrease of the room lighting"
-                            }
                         ]
                     }
                 ]
@@ -1349,11 +1312,7 @@
                     ],
                     "canActivate": [
                         {
-                            "trigger": "lightLevel ==> prova: c'è da vedere se il collegamento azioni - trigger abbia più senso qua, o magari fare a parte un file triggers ==> finchè è solo l'elemento 'canActivate' ci conviene lasciarlo qua, è anche più leggibile. Se ci rendiamo conto che ci serve di più allora spostiamo tutto in un file trigger", 
-                            "why": "Increase or decrease of the room lighting"
-                        },
-                        {
-                            "trigger": "Light  ==>  forse conviene modificare il json dei trigger per evitare questa ripetizione",
+                            "trigger": "lightLevel", 
                             "why": "Increase or decrease of the room lighting"
                         }
                     
@@ -1367,41 +1326,41 @@
                             "haPositiveEffectOnGoals": [
                                 {
                                     "goal": "safety",
-                                    "description": "This device can prevents gas accumulation"
+                                    "description": "This window can prevents gas accumulation"
                                 },
                                 {
                                     "goal": "health",
-                                    "description": "This device can improve air quality"
+                                    "description": "This window can improve air quality"
                                 },
                                 {
                                     "goal": "comfort",
-                                    "description": "This device can regulates the internal temperature"
+                                    "description": "This window can regulates the internal temperature"
                                 },
                                 {
                                     "goal": "energy saving",
-                                    "description": "This device can allow the temperature system to be switched off"
+                                    "description": "This window can allow the temperature system to be switched off"
                                 }
                             ],
                             "hasNegativeEffectOnGoals": [
                                 {
                                     "goal": "well-being",
-                                    "description": "This device can increases the noise from outside"
+                                    "description": "This window can increases the noise from outside"
                                 },
                                 {
                                     "goal": "well-being",
-                                    "description": "This device does not protect against weather events"
+                                    "description": "This window does not protect against weather events"
                                 },
                                 {
                                     "goal": "comfort",
-                                    "description": "This device can make the room too cold or too hot"
+                                    "description": "This window can make the room too cold or too hot"
                                 },
                                 {
                                     "goal": "security",
-                                    "description": "This device can allows unauthorized access"
+                                    "description": "This window can allows unauthorized access"
                                 },
                                 {
                                     "goal": "energy saving",
-                                    "description": "This device can consume a significant amount of energy if temperature systems are on"
+                                    "description": "This window can consume a significant amount of energy if temperature systems are on"
                                 }
                             ],
                             "confidentlyIncrease": [
@@ -1421,37 +1380,37 @@
                             "haPositiveEffectOnGoals": [
                                 {
                                     "goal": "well-being",
-                                    "description": "This device does not protect against weather events"
+                                    "description": "This window does not protect against weather events"
                                 },
                                 {
                                     "goal": "well-being",
-                                    "description": "This device can increases the noise from outside"
+                                    "description": "This window can increases the noise from outside"
                                 },
                                 {
                                     "goal": "comfort",
-                                    "description": "This device can make a more stable internal temperature"
+                                    "description": "This window can make a more stable internal temperature"
                                 },
                                 {
                                     "goal": "security",
-                                    "description": "This device can allows unauthorized access"
+                                    "description": "This window can allows unauthorized access"
                                 },
                                 {
                                     "goal": "energy saving",
-                                    "description": "This device can consume a significant amount of energy if temperature systems are on"
+                                    "description": "This window can consume a significant amount of energy if temperature systems are on"
                                 }
                             ],
                             "hasNegativeEffectOnGoals": [
                                 {
                                     "goal": "safety",
-                                    "description": "This device can prevents gas accumulation"
+                                    "description": "This window can prevents gas accumulation"
                                 },
                                 {
                                     "goal": "health",
-                                    "description": "This device can improve air quality"
+                                    "description": "This window can improve air quality"
                                 },
                                 {
                                     "goal": "comfort",
-                                    "description": "This device can make the room too cold or too hot"
+                                    "description": "This window can make the room too cold or too hot"
                                 }
                             ],
                             "confidentlyIncrease": [
@@ -1469,10 +1428,6 @@
                     ],
                     "canActivate": [
                         {
-                            "trigger": "windowSensor", 
-                            "why": "Detects the opening or closing of windows in the house"
-                        },
-                        {
                             "trigger": "temperature",
                             "why": "Increase or decrease of the room temperature"
                         },
@@ -1483,6 +1438,10 @@
                         {
                             "trigger": "noiseLevel",
                             "why": "Increase or decrease of the noise level"
+                        },
+                        {
+                            "trigger": "securityIntrusion",
+                            "why": "Open window can allow unauthorized access"
                         }
                     ]
                 }
@@ -1563,14 +1522,9 @@
                     ],
                     "canActivate": [
                         {
-                            "trigger": "lightLevel ==> prova: c'è da vedere se il collegamento azioni - trigger abbia più senso qua, o magari fare a parte un file triggers ==> finchè è solo l'elemento 'canActivate' ci conviene lasciarlo qua, è anche più leggibile. Se ci rendiamo conto che ci serve di più allora spostiamo tutto in un file trigger", 
-                            "why": "Increase or decrease of the room lighting"
-                        },
-                        {
-                            "trigger": "Light  ==>  forse conviene modificare il json dei trigger per evitare questa ripetizione",
+                            "trigger": "lightLevel", 
                             "why": "Increase or decrease of the room lighting"
                         }
-                    
                     ]
                 },
                 {
@@ -1581,41 +1535,41 @@
                             "haPositiveEffectOnGoals": [
                                 {
                                     "goal": "safety",
-                                    "description": "This device can prevents gas accumulation"
+                                    "description": "This window can prevents gas accumulation"
                                 },
                                 {
                                     "goal": "health",
-                                    "description": "This device can improve air quality"
+                                    "description": "This window can improve air quality"
                                 },
                                 {
                                     "goal": "comfort",
-                                    "description": "This device can regulates the internal temperature"
+                                    "description": "This window can regulates the internal temperature"
                                 },
                                 {
                                     "goal": "energy saving",
-                                    "description": "This device can allow the temperature system to be switched off"
+                                    "description": "This window can allow the temperature system to be switched off"
                                 }
                             ],
                             "hasNegativeEffectOnGoals": [
                                 {
                                     "goal": "well-being",
-                                    "description": "This device can increases the noise from outside"
+                                    "description": "This window can increases the noise from outside"
                                 },
                                 {
                                     "goal": "well-being",
-                                    "description": "This device does not protect against weather events"
+                                    "description": "This window does not protect against weather events"
                                 },
                                 {
                                     "goal": "comfort",
-                                    "description": "This device can make the room too cold or too hot"
+                                    "description": "This window can make the room too cold or too hot"
                                 },
                                 {
                                     "goal": "security",
-                                    "description": "This device can allows unauthorized access"
+                                    "description": "This window can allows unauthorized access"
                                 },
                                 {
                                     "goal": "energy saving",
-                                    "description": "This device can consume a significant amount of energy if temperature systems are on"
+                                    "description": "This window can consume a significant amount of energy if temperature systems are on"
                                 }
                             ],
                             "confidentlyIncrease": [
@@ -1635,37 +1589,37 @@
                             "haPositiveEffectOnGoals": [
                                 {
                                     "goal": "well-being",
-                                    "description": "This device does not protect against weather events"
+                                    "description": "This window does not protect against weather events"
                                 },
                                 {
                                     "goal": "well-being",
-                                    "description": "This device can increases the noise from outside"
+                                    "description": "This window can increases the noise from outside"
                                 },
                                 {
                                     "goal": "comfort",
-                                    "description": "This device can make a more stable internal temperature"
+                                    "description": "This window can make a more stable internal temperature"
                                 },
                                 {
                                     "goal": "security",
-                                    "description": "This device can allows unauthorized access"
+                                    "description": "This window can allows unauthorized access"
                                 },
                                 {
                                     "goal": "energy saving",
-                                    "description": "This device can consume a significant amount of energy if temperature systems are on"
+                                    "description": "This window can consume a significant amount of energy if temperature systems are on"
                                 }
                             ],
                             "hasNegativeEffectOnGoals": [
                                 {
                                     "goal": "safety",
-                                    "description": "This device can prevents gas accumulation"
+                                    "description": "This window can prevents gas accumulation"
                                 },
                                 {
                                     "goal": "health",
-                                    "description": "This device can improve air quality"
+                                    "description": "This window can improve air quality"
                                 },
                                 {
                                     "goal": "comfort",
-                                    "description": "This device can make the room too cold or too hot"
+                                    "description": "This window can make the room too cold or too hot"
                                 }
                             ],
                             "confidentlyIncrease": [
@@ -1683,10 +1637,6 @@
                     ],
                     "canActivate": [
                         {
-                            "trigger": "windowSensor", 
-                            "why": "Detects the opening or closing of windows in the house"
-                        },
-                        {
                             "trigger": "temperature",
                             "why": "Increase or decrease of the room temperature"
                         },
@@ -1697,6 +1647,10 @@
                         {
                             "trigger": "noiseLevel",
                             "why": "Increase or decrease of the noise level"
+                        },
+                        {
+                            "trigger": "securityIntrusion",
+                            "why": "Open window can allow unauthorized access"
                         }
                     ]
                 }
@@ -1715,7 +1669,7 @@
                         "haPositiveEffectOnGoals": [
                             {
                                 "goal":"well-being",
-                                "description":"It can improve relaxation (non so se abbia senso, magari andrebbe messo come goal svago - leisure? ==> secondo me 'svago' fa parte del well-being in quanto contribuisce al benessere, io lo lascerei così"
+                                "description":"It can improve relaxation"
                             }
                         ],
                         "hasNegativeEffectOnGoals": [
@@ -1762,6 +1716,12 @@
                         "canIncreaseEnvironmentVariables": [],
                         "canDecreaseEnvironmentVariables": []
                     }
+                ],
+                "canActivate": [
+                    {
+                        "trigger": "noiseLevel",
+                        "why": "Increase or decrease of the noise level"
+                    }
                 ]
             },
             {
@@ -1806,6 +1766,12 @@
                         "confidentlyDecreaseEnvironmentVariables": [],
                         "canIncreaseEnvironmentVariables": [],
                         "canDecreaseEnvironmentVariables": []
+                    }
+                ],
+                "canActivate": [
+                    {
+                        "trigger": "noiseLevel",
+                        "why": "Increase or decrease of the noise level"
                     }
                 ]
             },
@@ -1864,6 +1830,12 @@
                         "canIncreaseEnvironmentVariables": [],
                         "canDecreaseEnvironmentVariables": []
                     }
+                ],
+                "canActivate": [
+                    {
+                        "trigger": "noiseLevel",
+                        "why": "Increase or decrease of the noise level"
+                    }
                 ]
             },
             {
@@ -1906,6 +1878,12 @@
                         "canIncreaseEnvironmentVariables": [],
                         "canDecreaseEnvironmentVariables": []
                     }
+                ],
+                "canActivate": [
+                    {
+                        "trigger": "noiseLevel",
+                        "why": "Increase or decrease of the noise level"
+                    }
                 ]
             },
             {
@@ -1916,7 +1894,7 @@
                         "haPositiveEffectOnGoals": [
                             {
                                 "goal":"well-being",
-                                "description":"It can improve relaxation (forse? ==> si, alla fine è un dispositivo che può intrattenere e svagare)"
+                                "description":"It can improve relaxation"
                             }
                         ],
                         "hasNegativeEffectOnGoals": [
@@ -1973,6 +1951,12 @@
                         "confidentlyDecreaseEnvironmentVariables": [],
                         "canIncreaseEnvironmentVariables": [],
                         "canDecreaseEnvironmentVariables": []
+                    }
+                ],
+                "canActivate": [
+                    {
+                        "trigger": "noiseLevel",
+                        "why": "Increase or decrease of the noise level"
                     }
                 ]
             }
