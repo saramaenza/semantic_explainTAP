@@ -346,14 +346,13 @@
                       {
                         "goal": "well-being",
                         "description": "This device can make noise"
-                      }
-                    ],
-                    "hasNegativeEffectOnGoals": [
+                      },
                       {
                         "goal": "energy saving",
                         "description": "This device can consume a significant amount of energys"
                       }
                     ],
+                    "hasNegativeEffectOnGoals": [],
                     "confidentlyIncreaseEnvironmentVariables": [
                       "quiet"
                     ],
