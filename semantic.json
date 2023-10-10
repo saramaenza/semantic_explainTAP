@@ -89,10 +89,35 @@
               },
               {
                 "realName": "AllWindow",
+                "displayedName": "all windows",
                 "possibleValues": [
                   {
                     "value": "Open",
                     "hasPositiveEffectOnGoals": [
+                      {
+                        "goal": "well-being",
+                        "description": "the external humidity is less than the current home humidity",
+                        "environment_variable": "humidity"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external noise level is less than the noise level inside home",
+                        "environment_variable": "noise"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external temperature is less than the current home temperature",
+                        "environment_variable": "temperature"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external air quality value is better than the current bedroom air quality value",
+                        "environment_variable": "air quality"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "it protects against weather events"
+                      },
                       {
                         "goal": "safety",
                         "description": "This window can prevent gas accumulation"
@@ -113,11 +138,27 @@
                     "hasNegativeEffectOnGoals": [
                       {
                         "goal": "well-being",
-                        "description": "This window can increases the noise from outside"
+                        "description": "the external humidity is more than the current home humidity",
+                        "environment_variable": "humidity"
                       },
                       {
                         "goal": "well-being",
-                        "description": "This window does not protect against weather events"
+                        "description": "the external noise level is more than the noise level inside home",
+                        "environment_variable": "noise"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external temperature is more than the current home temperature",
+                        "environment_variable": "temperature"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external air quality value is worst than the current bedroom air quality value",
+                        "environment_variable": "air quality"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "it does not protect against weather events"
                       },
                       {
                         "goal": "comfort",
@@ -151,9 +192,10 @@
                       "air quality"
                     ],
                     "canDecreaseEnvironmentVariables": [
-                      "quiet",
+                      "noise",
                       "temperature",
-                      "air humidity"
+                      "air humidity",
+                      "air quality"
                     ]
                   },
                   {
@@ -161,11 +203,27 @@
                     "hasPositiveEffectOnGoals": [
                       {
                         "goal": "well-being",
-                        "description": "This window protects against weather events"
+                        "description": "the external humidity is more than the current home humidity",
+                        "environment_variable": "humidity"
                       },
                       {
                         "goal": "well-being",
-                        "description": "This window can increases the noise from outside"
+                        "description": "the external noise level is more than the noise level inside home",
+                        "environment_variable": "noise"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external air quality value is worst than the current bedroom air quality value",
+                        "environment_variable": "air quality"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external temperature is more than the current home temperature",
+                        "environment_variable": "temperature"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "it protects against weather events"
                       },
                       {
                         "goal": "comfort",
@@ -182,6 +240,26 @@
                     ],
                     "hasNegativeEffectOnGoals": [
                       {
+                        "goal": "well-being",
+                        "description": "the external humidity is less than the current home humidity",
+                        "environment_variable": "humidity"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external noise level is less than the noise level inside home",
+                        "environment_variable": "noise"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external air quality value is better than the current bedroom air quality value",
+                        "environment_variable": "air quality"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external temperature is less than the current home temperature",
+                        "environment_variable": "temperature"
+                      },
+                      {
                         "goal": "safety",
                         "description": "This window can prevents gas accumulation"
                       },
@@ -197,7 +275,6 @@
                     "confidentlyIncreaseEnvironmentVariables": [],
                     "confidentlyDecreaseEnvironmentVariables": [],
                     "canIncreaseEnvironmentVariables": [
-                      "quiet",
                       "temperature",
                       "air humidity"
                     ],
@@ -230,13 +307,15 @@
               },
               {
                 "realName": "HeatingSystem",
+                "displayedName": "heating system",
                 "possibleValues": [
                   {
                     "value": "On",
                     "hasPositiveEffectOnGoals": [
                       {
                         "goal": "well-being",
-                        "description": "This device can make a more comfortable environment in cold season"
+                        "description": "This device can make a more comfortable environment in cold season",
+                        "environment_variable": "temperature"
                       },
                       {
                         "goal": "comfort",
@@ -250,7 +329,8 @@
                       },
                       {
                         "goal": "well-being",
-                        "description": "This device can make a too hot environment in hot season"
+                        "description": "This device can make a too hot environment in hot season",
+                        "environment_variable": "temperature"
                       },
                       {
                         "goal": "comfort",
@@ -273,7 +353,8 @@
                       },
                       {
                         "goal": "well-being",
-                        "description": "This device can make a more comfortable environment in hot season"
+                        "description": "This device can make a more comfortable environment in hot season",
+                        "environment_variable": "temperature"
                       },
                       {
                         "goal": "comfort",
@@ -283,7 +364,8 @@
                     "hasNegativeEffectOnGoals": [
                       {
                         "goal": "well-being",
-                        "description": "This device can make a too cold environment in cold season"
+                        "description": "This device can make a too cold environment in cold season",
+                        "environment_variable": "temperature"
                       },
                       {
                         "goal": "comfort",
@@ -306,6 +388,71 @@
                 ]
               },
               {
+                "realName": "CoolingSystem",
+                "displayedName": "cooling system",
+                "possibleValues": [
+                  {
+                    "value": "On",
+                    "hasPositiveEffectOnGoals": [
+                      {
+                        "goal": "well-being",
+                        "description": "it can make a more comfortable environment in hot season",
+                        "environment_variable": "temperature"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "it can decreases humidity in the house",
+                        "environment_variable": "humidity"
+                      }
+                    ],
+                    "hasNegativeEffectOnGoals": [
+                    ],
+                    "confidentlyIncreaseEnvironmentVariables": [
+                    ],
+                    "confidentlyDecreaseEnvironmentVariables": [
+                      "temperature"
+                    ],
+                    "canIncreaseEnvironmentVariables": [
+                    ],
+                    "canDecreaseEnvironmentVariables": [
+                      "humidity"
+                    ]
+                  },
+                  {
+                    "value": "Off",
+                    "hasPositiveEffectOnGoals": [
+                    ],
+                    "hasNegativeEffectOnGoals": [
+                      {
+                        "goal": "well-being",
+                        "description": "it can make a more bad environment in cold season",
+                        "environment_variable": "temperature"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "it can increase humidity in the house",
+                        "environment_variable": "humidity"
+                      }
+                    ],
+                    "confidentlyIncreaseEnvironmentVariables": [
+                      "temperature"
+                    ],
+                    "confidentlyDecreaseEnvironmentVariables": [
+                    ],
+                    "canIncreaseEnvironmentVariables": [
+                      "humidity"
+                    ],
+                    "canDecreaseEnvironmentVariables": []
+                  }
+                ],
+                "canActivate": [
+                  {
+                    "trigger": "temperature",
+                    "why": "Increase or decrease of the room temperature"
+                  }
+                ]
+              },
+              {
                 "realName": "RobotVacuumCleaner",
                 "possibleValues": [
                   {
@@ -313,17 +460,20 @@
                     "hasPositiveEffectOnGoals": [
                       {
                         "goal": "health",
-                        "description": "This device can improve air quality thanks to clean and dust-free floors"
+                        "description": "it device can improve air quality thanks to clean and dust-free floors",
+                        "environment_variable": "air quality"
                       },
                       {
                         "goal": "well-being",
-                        "description": "This device can make a clean and tidy environment"
+                        "description": "it can make a clean and tidy environment",
+                        "environment_variable": "cleaning"
                       }
                     ],
                     "hasNegativeEffectOnGoals": [
                       {
                         "goal": "well-being",
-                        "description": "This device can make noise"
+                        "description": "This device can make noise",
+                        "environment_variable": "noise"
                       },
                       {
                         "goal": "energy saving",
@@ -335,7 +485,6 @@
                       "noise"
                     ],
                     "confidentlyDecreaseEnvironmentVariables": [
-                      "quiet"
                     ],
                     "canIncreaseEnvironmentVariables": [],
                     "canDecreaseEnvironmentVariables": []
@@ -456,6 +605,7 @@
               },
               {
                 "realName": "WindowSensor",
+                "displayedName": "window",
                 "possibleValues": [
                   {
                     "value": "Open",
@@ -475,16 +625,56 @@
                       {
                         "goal": "energy saving",
                         "description": "This window can allow the temperature system to be switched off"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external humidity is less than the current kitchen humidity",
+                        "environment_variable": "humidity"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external noise level is less than the noise level inside kitchen",
+                        "environment_variable": "noise"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external temperature is less than the current kitchen temperature",
+                        "environment_variable": "temperature"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external air quality value is better than the current kitchen air quality value",
+                        "environment_variable": "air quality"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "it protects against weather events"
                       }
                     ],
                     "hasNegativeEffectOnGoals": [
                       {
                         "goal": "well-being",
-                        "description": "This window can increases the noise from outside"
+                        "description": "the external humidity is more than the current kitchen humidity",
+                        "environment_variable": "humidity"
                       },
                       {
                         "goal": "well-being",
-                        "description": "This window does not protect against weather events"
+                        "description": "the external noise level is more than the current kitchen noise level",
+                        "environment_variable": "noise"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external temperature is more than the current kitchen temperature",
+                        "environment_variable": "temperature"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external air quality value is worst than the current kitchen air quality value",
+                        "environment_variable": "air quality"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "it does not protect against weather events"
                       },
                       {
                         "goal": "comfort",
@@ -500,19 +690,19 @@
                       }
                     ],
                     "confidentlyIncreaseEnvironmentVariables": [
-                      "air quality",
-                      "lighting"
                     ],
                     "confidentlyDecreaseEnvironmentVariables": [],
                     "canIncreaseEnvironmentVariables": [
                       "noise",
                       "temperature",
-                      "air humidity"
+                      "humidity",
+                      "air quality"
                     ],
                     "canDecreaseEnvironmentVariables": [
-                      "quiet",
+                      "noise",
                       "temperature",
-                      "air humidity"
+                      "humidity",
+                      "air quality"
                     ]
                   },
                   {
@@ -520,11 +710,27 @@
                     "hasPositiveEffectOnGoals": [
                       {
                         "goal": "well-being",
-                        "description": "This window does not protect against weather events"
+                        "description": "the external humidity is more than the current kitchen humidity",
+                        "environment_variable": "humidity"
                       },
                       {
                         "goal": "well-being",
-                        "description": "This window can increases the noise from outside"
+                        "description": "the external noise level is more than the noise level inside kitchen",
+                        "environment_variable": "noise"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external temperature is more than the current kitchen temperature",
+                        "environment_variable": "temperature"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external air quality value is worst than the current kitchen air quality value",
+                        "environment_variable": "air quality"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "it protects against weather events"
                       },
                       {
                         "goal": "comfort",
@@ -551,6 +757,26 @@
                       {
                         "goal": "comfort",
                         "description": "This window can make the room too cold or too hot"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external humidity is less than the current kitchen humidity",
+                        "environment_variable": "humidity"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external air quality value is better than the current kitchen air quality value",
+                        "environment_variable": "air quality"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external noise level is less than the noise level inside kitchen",
+                        "environment_variable": "noise"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external temperature is less than the current kitchen temperature",
+                        "environment_variable": "temperature"
                       }
                     ],
                     "confidentlyIncreaseEnvironmentVariables": [],
@@ -869,6 +1095,7 @@
               },
               {
                 "realName": "WindowSensor",
+                "displayedName": "window",
                 "possibleValues": [
                   {
                     "value": "Open",
@@ -888,16 +1115,56 @@
                       {
                         "goal": "energy saving",
                         "description": "This window can allow the temperature system to be switched off"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external humidity is less than the current living room humidity",
+                        "environment_variable": "humidity"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external noise level is less than the noise level inside living room",
+                        "environment_variable": "noise"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external temperature is less than the current living room temperature",
+                        "environment_variable": "temperature"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external air quality value is better than the current living room air quality value",
+                        "environment_variable": "air quality"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "it protects against weather events"
                       }
                     ],
                     "hasNegativeEffectOnGoals": [
                       {
                         "goal": "well-being",
-                        "description": "This window can increases the noise from outside"
+                        "description": "the external humidity is more than the current living room humidity",
+                        "environment_variable": "humidity"
                       },
                       {
                         "goal": "well-being",
-                        "description": "This window does not protect against weather events"
+                        "description": "the external noise level is more than the current living room noise level",
+                        "environment_variable": "noise"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external temperature is more than the current living room temperature",
+                        "environment_variable": "temperature"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external air quality value is worst than the current living room air quality value",
+                        "environment_variable": "air quality"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "it does not protect against weather events"
                       },
                       {
                         "goal": "comfort",
@@ -913,18 +1180,19 @@
                       }
                     ],
                     "confidentlyIncreaseEnvironmentVariables": [
-                      "air quality"
                     ],
                     "confidentlyDecreaseEnvironmentVariables": [],
                     "canIncreaseEnvironmentVariables": [
                       "noise",
                       "temperature",
-                      "air humidity"
+                      "humidity",
+                      "air quality"
                     ],
                     "canDecreaseEnvironmentVariables": [
-                      "quiet",
+                      "noise",
                       "temperature",
-                      "air humidity"
+                      "humidity",
+                      "air quality"
                     ]
                   },
                   {
@@ -932,11 +1200,27 @@
                     "hasPositiveEffectOnGoals": [
                       {
                         "goal": "well-being",
-                        "description": "This window does not protect against weather events"
+                        "description": "the external humidity is more than the current living room humidity",
+                        "environment_variable": "humidity"
                       },
                       {
                         "goal": "well-being",
-                        "description": "This window can increases the noise from outside"
+                        "description": "the external noise level is more than the noise level inside living room",
+                        "environment_variable": "noise"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external temperature is more than the current living room temperature",
+                        "environment_variable": "temperature"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external air quality value is worst than the current living room air quality value",
+                        "environment_variable": "air quality"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "it protects against weather events"
                       },
                       {
                         "goal": "comfort",
@@ -963,21 +1247,42 @@
                       {
                         "goal": "comfort",
                         "description": "This window can make the room too cold or too hot"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external humidity is less than the current kitchen humidity",
+                        "environment_variable": "humidity"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external air quality value is better than the current kitchen air quality value",
+                        "environment_variable": "air quality"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external noise level is less than the noise level inside kitchen",
+                        "environment_variable": "noise"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external temperature is less than the current kitchen temperature",
+                        "environment_variable": "temperature"
                       }
                     ],
-                    "confidentlyIncreaseEnvironmentVariables": [],
-                    "confidentlyDecreaseEnvironmentVariables": [
-                      "air quality"
+                    "confidentlyIncreaseEnvironmentVariables": [
                     ],
+                    "confidentlyDecreaseEnvironmentVariables": [],
                     "canIncreaseEnvironmentVariables": [
-                      "quiet",
+                      "noise",
                       "temperature",
-                      "air humidity"
+                      "humidity",
+                      "air quality"
                     ],
                     "canDecreaseEnvironmentVariables": [
                       "noise",
                       "temperature",
-                      "air humidity"
+                      "humidity",
+                      "air quality"
                     ]
                   }
                 ],
@@ -1327,10 +1632,35 @@
               },
               {
                 "realName": "WindowSensor",
+                "displayedName": "window",
                 "possibleValues": [
                   {
                     "value": "Open",
                     "hasPositiveEffectOnGoals": [
+                      {
+                        "goal": "well-being",
+                        "description": "the external humidity is less than the current bedroom humidity",
+                        "environment_variable": "humidity"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external noise level is less than the noise level inside bedroom",
+                        "environment_variable": "noise"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external temperature is less than the current bedroom temperature",
+                        "environment_variable": "temperature"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external air quality value is better than the current bedroom air quality value",
+                        "environment_variable": "air quality"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "it protects against weather events"
+                      },
                       {
                         "goal": "safety",
                         "description": "This window can prevents gas accumulation"
@@ -1351,38 +1681,66 @@
                     "hasNegativeEffectOnGoals": [
                       {
                         "goal": "well-being",
-                        "description": "This window can increases the noise from outside"
+                        "description": "the external humidity is more than the current bedroom humidity",
+                        "environment_variable": "humidity"
                       },
                       {
                         "goal": "well-being",
-                        "description": "This window does not protect against weather events"
+                        "description": "the external noise level is more than the current bedroom noise level",
+                        "environment_variable": "noise"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external temperature is more than the current bedroom temperature",
+                        "environment_variable": "temperature"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external air quality value is worst than the current bedroom air quality value",
+                        "environment_variable": "air quality"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "it does not protect against weather events"
                       },
                       {
                         "goal": "comfort",
-                        "description": "This window can make the room too cold or too hot"
+                        "description": "it can make the bedroom environment too cold or too hot",
+                        "environment_variable": "temperature"
                       },
                       {
                         "goal": "security",
-                        "description": "This window can allows unauthorized access"
+                        "description": "it can allow unauthorized access"
                       },
                       {
                         "goal": "energy saving",
-                        "description": "This window can consume a significant amount of energy if temperature systems are on"
+                        "description": "it can consume a significant amount of energy if temperature (heating or cooling) systems are on",
+                        "ifAction": [
+                          {
+                            "action": "HeatingSystem",
+                            "value": "On"
+                          },
+                          {
+                            "action": "CoolingSystem",
+                            "value": "On"
+                          }
+                        ]
                       }
                     ],
                     "confidentlyIncreaseEnvironmentVariables": [
-                      "air quality"
                     ],
                     "confidentlyDecreaseEnvironmentVariables": [],
                     "canIncreaseEnvironmentVariables": [
                       "noise",
                       "temperature",
-                      "air humidity"
+                      "humidity",
+                      "air quality"
                     ],
                     "canDecreaseEnvironmentVariables": [
-                      "quiet",
+                      "noise",
                       "temperature",
-                      "air humidity"
+                      "humidity",
+                      "air quality"
                     ]
                   },
                   {
@@ -1390,11 +1748,27 @@
                     "hasPositiveEffectOnGoals": [
                       {
                         "goal": "well-being",
-                        "description": "This window does not protect against weather events"
+                        "description": "the external humidity is more than the current bedroom humidity",
+                        "environment_variable": "humidity"
                       },
                       {
                         "goal": "well-being",
-                        "description": "This window can increases the noise from outside"
+                        "description": "the external noise level is more than the noise level inside bedroom",
+                        "environment_variable": "noise"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external temperature is more than the current bedroom temperature",
+                        "environment_variable": "temperature"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external air quality value is worst than the current bedroom air quality value",
+                        "environment_variable": "air quality"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "it protects against weather events"
                       },
                       {
                         "goal": "comfort",
@@ -1411,6 +1785,26 @@
                     ],
                     "hasNegativeEffectOnGoals": [
                       {
+                        "goal": "well-being",
+                        "description": "the external humidity is less than the current bedroom humidity",
+                        "environment_variable": "humidity"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external air quality value is better than the current bedroom air quality value",
+                        "environment_variable": "air quality"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external noise level is less than the noise level inside bedroom",
+                        "environment_variable": "noise"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external temperature is less than the current bedroom temperature",
+                        "environment_variable": "temperature"
+                      },
+                      {
                         "goal": "safety",
                         "description": "This window can prevents gas accumulation"
                       },
@@ -1423,19 +1817,20 @@
                         "description": "This window can make the room too cold or too hot"
                       }
                     ],
-                    "confidentlyIncreaseEnvironmentVariables": [],
-                    "confidentlyDecreaseEnvironmentVariables": [
-                      "air quality"
+                    "confidentlyIncreaseEnvironmentVariables": [
                     ],
+                    "confidentlyDecreaseEnvironmentVariables": [],
                     "canIncreaseEnvironmentVariables": [
-                      "quiet",
+                      "noise",
                       "temperature",
-                      "air humidity"
+                      "humidity",
+                      "air quality"
                     ],
                     "canDecreaseEnvironmentVariables": [
                       "noise",
                       "temperature",
-                      "air humidity"
+                      "humidity",
+                      "air quality"
                     ]
                   }
                 ],
@@ -1538,6 +1933,7 @@
               },
               {
                 "realName": "WindowSensor",
+                "displayedName": "window",
                 "possibleValues": [
                   {
                     "value": "Open",
@@ -1557,16 +1953,56 @@
                       {
                         "goal": "energy saving",
                         "description": "This window can allow the temperature system to be switched off"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external humidity is less than the current kitchen humidity",
+                        "environment_variable": "humidity"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external noise level is less than the noise level inside bathroom",
+                        "environment_variable": "noise"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external temperature is less than the current bathroom temperature",
+                        "environment_variable": "temperature"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external air quality value is better than the current bathroom air quality value",
+                        "environment_variable": "air quality"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "it protects against weather events"
                       }
                     ],
                     "hasNegativeEffectOnGoals": [
                       {
                         "goal": "well-being",
-                        "description": "This window can increases the noise from outside"
+                        "description": "the external humidity is more than the current bathroom humidity",
+                        "environment_variable": "humidity"
                       },
                       {
                         "goal": "well-being",
-                        "description": "This window does not protect against weather events"
+                        "description": "the external noise level is more than the current bathroom noise level",
+                        "environment_variable": "noise"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external temperature is more than the current bathroom temperature",
+                        "environment_variable": "temperature"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external air quality value is worst than the current bathroom air quality value",
+                        "environment_variable": "air quality"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "it does not protect against weather events"
                       },
                       {
                         "goal": "comfort",
@@ -1582,18 +2018,19 @@
                       }
                     ],
                     "confidentlyIncreaseEnvironmentVariables": [
-                      "air quality"
                     ],
                     "confidentlyDecreaseEnvironmentVariables": [],
                     "canIncreaseEnvironmentVariables": [
                       "noise",
                       "temperature",
-                      "air humidity"
+                      "humidity",
+                      "air quality"
                     ],
                     "canDecreaseEnvironmentVariables": [
-                      "quiet",
+                      "noise",
                       "temperature",
-                      "air humidity"
+                      "humidity",
+                      "air quality"
                     ]
                   },
                   {
@@ -1601,11 +2038,27 @@
                     "hasPositiveEffectOnGoals": [
                       {
                         "goal": "well-being",
-                        "description": "This window does not protect against weather events"
+                        "description": "the external humidity is more than the current bathroom humidity",
+                        "environment_variable": "humidity"
                       },
                       {
                         "goal": "well-being",
-                        "description": "This window can increases the noise from outside"
+                        "description": "the external noise level is more than the noise level inside bathroom",
+                        "environment_variable": "noise"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external temperature is more than the current bathroom temperature",
+                        "environment_variable": "temperature"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external air quality value is worst than the current bathroom air quality value",
+                        "environment_variable": "air quality"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "it protects against weather events"
                       },
                       {
                         "goal": "comfort",
@@ -1632,6 +2085,26 @@
                       {
                         "goal": "comfort",
                         "description": "This window can make the room too cold or too hot"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external humidity is less than the current kitchen humidity",
+                        "environment_variable": "humidity"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external air quality value is better than the current kitchen air quality value",
+                        "environment_variable": "air quality"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external noise level is less than the noise level inside kitchen",
+                        "environment_variable": "noise"
+                      },
+                      {
+                        "goal": "well-being",
+                        "description": "the external temperature is less than the current kitchen temperature",
+                        "environment_variable": "temperature"
                       }
                     ],
                     "confidentlyIncreaseEnvironmentVariables": [],
@@ -1684,7 +2157,8 @@
                 "hasPositiveEffectOnGoals": [
                   {
                     "goal": "well-being",
-                    "description": "It can improve relaxation"
+                    "description": "It can improve relaxation",
+                    "environment_variable": "--TODO--"
                   }
                 ],
                 "hasNegativeEffectOnGoals": [
@@ -1694,7 +2168,8 @@
                   },
                   {
                     "goal": "well-being",
-                    "description": "This device can negatively affect sleep quality"
+                    "description": "This device can negatively affect sleep quality",
+                    "environment_variable": "--TODO--"
                   },
                   {
                     "goal": "comfort",
@@ -1721,7 +2196,8 @@
                   },
                   {
                     "goal": "well-being",
-                    "description": "This device can negatively affect sleep quality"
+                    "description": "This device can negatively affect sleep quality",
+                    "environment_variable": "--TODO--"
                   }
                 ],
                 "hasNegativeEffectOnGoals": [],
@@ -1756,7 +2232,8 @@
                 "hasNegativeEffectOnGoals": [
                   {
                     "goal": "well-being",
-                    "description": "This device can negatively affect sleep quality"
+                    "description": "This device can negatively affect sleep quality",
+                    "environment_variable": "--TODO--"
                   }
                 ],
                 "confidentlyIncreaseEnvironmentVariables": [],
@@ -1771,7 +2248,8 @@
                 "hasPositiveEffectOnGoals": [
                   {
                     "goal": "well-being",
-                    "description": "This device can negatively affect sleep quality"
+                    "description": "This device can negatively affect sleep quality",
+                    "environment_variable": "--TODO--"
                   }
                 ],
                 "hasNegativeEffectOnGoals": [
@@ -1801,7 +2279,8 @@
                 "hasPositiveEffectOnGoals": [
                   {
                     "goal": "well-being",
-                    "description": "It can improve relaxation (non so se abbia senso, magari andrebbe messo come goal svago - leisure?"
+                    "description": "It can improve relaxation (non so se abbia senso, magari andrebbe messo come goal svago - leisure?",
+                    "environment_variable": "--TODO--"
                   }
                 ],
                 "hasNegativeEffectOnGoals": [
@@ -1834,7 +2313,8 @@
                   },
                   {
                     "goal": "well-being",
-                    "description": "This device can negatively affect sleep quality"
+                    "description": "This device can negatively affect sleep quality",
+                    "environment_variable": "--TODO--"
                   }
                 ],
                 "hasNegativeEffectOnGoals": [],
@@ -1863,7 +2343,8 @@
                 "hasPositiveEffectOnGoals": [
                   {
                     "goal": "well-being",
-                    "description": "It can improve relaxation (non so se abbia senso, magari andrebbe messo come goal svago - leisure?"
+                    "description": "It can improve relaxation (non so se abbia senso, magari andrebbe messo come goal svago - leisure?",
+                    "environment_variable": "--TODO--"
                   },
                   {
                     "goal": "comfort",
@@ -1873,7 +2354,8 @@
                 "hasNegativeEffectOnGoals": [
                   {
                     "goal": "well-being",
-                    "description": "This device can negatively affect sleep quality"
+                    "description": "This device can negatively affect sleep quality",
+                    "environment_variable": "--TODO--"
                   }
                 ],
                 "confidentlyIncreaseEnvironmentVariables": [],
@@ -1891,7 +2373,8 @@
                 "hasPositiveEffectOnGoals": [
                   {
                     "goal": "well-being",
-                    "description": "This device can negatively affect sleep quality"
+                    "description": "This device can negatively affect sleep quality",
+                    "environment_variable": "--TODO--"
                   }
                 ],
                 "hasNegativeEffectOnGoals": [],
@@ -1916,7 +2399,8 @@
                 "hasPositiveEffectOnGoals": [
                   {
                     "goal": "well-being",
-                    "description": "It can improve relaxation"
+                    "description": "It can improve relaxation",
+                    "environment_variable": "--TODO--"
                   }
                 ],
                 "hasNegativeEffectOnGoals": [
@@ -1937,7 +2421,8 @@
                 "hasPositiveEffectOnGoals": [
                   {
                     "goal": "well-being",
-                    "description": "It help with the daily organization"
+                    "description": "It help with the daily organization",
+                    "environment_variable": "--TODO--"
                   }
                 ],
                 "hasNegativeEffectOnGoals": [
@@ -1958,7 +2443,8 @@
                 "hasPositiveEffectOnGoals": [
                   {
                     "goal": "well-being",
-                    "description": "It can improve relaxation (non so se abbia senso, magari andrebbe messo come goal svago - leisure?"
+                    "description": "It can improve relaxation (non so se abbia senso, magari andrebbe messo come goal svago - leisure?",
+                    "environment_variable": "--TODO--"
                   }
                 ],
                 "hasNegativeEffectOnGoals": [
