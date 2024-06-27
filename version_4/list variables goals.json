@@ -1,0 +1,230 @@
+{
+  "list_of_vars": {    
+    "illuminance": {
+      "possibleValues": [                        
+        {
+          "value": "high",
+          "positive_effect_on_goal": [
+            {
+              "goal": "comfort",
+              "description": "This device makes a more comfortable environment"
+            },
+            {
+              "goal": "comfort",
+              "description": "This device can make your daily tasks easier"
+            },
+            {
+              "goal": "safety",
+              "description": "This device can prevent accidents"
+            },
+            {
+              "goal": "security",
+              "description": "This device can deter criminals"
+            }
+          ],
+          "negative_effect_on_goal": [           
+            {
+              "goal": "well-being",
+              "description": "L'esposizione a luci intense, soprattutto in orari serali, può interferire con il ritmo circadiano e disturbare il sonno"
+            },
+            {
+              "goal": "health",
+              "description": "L'esposizione a luci intense, soprattutto in orari serali, può interferire con il ritmo circadiano e disturbare il sonno"
+            }
+          ]
+        },
+        {
+          "value": "low",
+          "positive_effect_on_goal": [],
+          "negative_effect_on_goal": [           
+            {
+              "goal": "comfort",
+              "description": "Una luce insufficiente può causare affaticamento visivo e disagio, rendendo difficile vedere e lavorare."
+            },
+            {
+              "goal": "safety",
+              "description": "Una luminosità insufficiente può aumentare il rischio di cadute e incidenti, poiché gli ostacoli e i pericoli non sono facilmente visibili"
+            },
+            {
+              "goal": "security",
+              "description": "La scarsa illuminazione aumenta il rischio di incidenti e rende più facile nascondersi per potenziali intrusi, riducendo la sicurezza."
+            }
+          ]
+        }
+      ]
+    },
+    "energy": {
+      "possibleValues": [                        
+        {
+          "value": "high",
+          "positive_effect_on_goal": [],
+          "negative_effect_on_goal": [           
+            {
+              "goal": "energy saving",
+              "description": "spreco",
+              "when": [{
+                "action_domain": "fan",
+                "action_state": "on",
+                "sensor_class": "window",
+                "sensor_state": "on",
+                "same_environment": true
+              }]
+            },
+            {
+              "goal": "energy saving",
+              "description": "This device can consume a significant amount of energy"
+            }
+          ]
+        },
+        {
+          "value": "low",
+          "positive_effect_on_goal": [],
+          "negative_effect_on_goal": [           
+            {
+              "goal": "energy saving",
+              "description": "spreco",
+              "when": [{
+                "action_domain": "light",
+                "action_state": "on",
+                "sensor_class": "motion",
+                "sensor_state": "off",
+                "same_environment": true
+              }]
+            }
+          ]
+        }
+      ]
+    },
+    "aqi": {
+      "possibleValues": [                        
+        {
+          "value": "high",
+          "positive_effect_on_goal": [
+            {  
+              "goal": "health",
+              "description": "This device can reduce the buildup of indoor pollutants, improving air quality"
+            },
+            {
+              "goal": "well-being",
+              "description": "This device improves air circulation"
+            }
+          ],
+          "negative_effect_on_goal": []
+        },
+        {
+          "value": "low",
+          "positive_effect_on_goal": [],
+          "negative_effect_on_goal": [           
+            {
+              "goal": "comfort",
+              "description": "La presenza di inquinanti, umidità eccessiva o muffe può generare cattivi odori che rendono l'ambiente sgradevole."
+            },
+            {
+              "goal": "health",
+              "description": "La scarsa qualità dell'aria può causare o aggravare problemi respiratori come asma, bronchite e altre malattie polmonari.."
+            },
+            {
+              "goal": "health",
+              "description": "La scarsa qualità dell'aria può causare disagio fisico come sensazione di soffocamento, mal di testa e affaticamento"
+            }
+          ]
+        }
+      ]
+    },
+    "sound_pressure": {
+      "possibleValues": [                        
+        {
+          "value": "high",
+          "positive_effect_on_goal": [
+
+          ],
+          "negative_effect_on_goal": [
+            {  
+              "goal": "comfort",
+              "description": "Rumori forti possono causare disagio e rendere l'ambiente sgradevole"
+            },
+            {
+              "goal": "well-being",
+              "description": " Esposizione continua a rumori forti può aumentare i livelli di stress"
+            },
+            {
+              "goal": "health",
+              "description": "Esposizione prolungata a rumori forti può causare danni all'udito."
+            }
+          ]
+        },
+        {
+          "value": "low",
+          "positive_effect_on_goal": [
+            {
+              "goal": "well-being",
+              "description": "Un basso livello di rumore può favorire il relax, ridurre lo stress e migliorare la qualità del sonno."
+            }
+          ],
+          "negative_effect_on_goal": []
+        }
+      ]
+    },
+    "temperature": {
+      "possibleValues": [                        
+        {
+          "value": "high",
+          "positive_effect_on_goal": [
+            {
+              "goal": "comfort",
+              "description": "In inverno, una temperatura calda può rendere l'ambiente più accogliente e confortevole."
+            }
+          ],
+          "negative_effect_on_goal": [
+            {  
+              "goal": "comfort",
+              "description": "Temperature troppo elevate possono causare disagio, sudorazione e irritabilità."
+            },
+            {  
+              "goal": "well-being",
+              "description": "Un ambiente troppo caldo può causare affaticamento, ridotta concentrazione e sonnolenza."
+            }
+          ]
+        },
+        {
+          "value": "low",
+          "positive_effect_on_goal": [
+            {
+              "goal": "comfort",
+              "description": " In estate, una temperatura fresca può rendere l'ambiente più confortevole e piacevole."
+            }
+          ],
+          "negative_effect_on_goal": [
+            {
+              "goal": "comfort",
+              "description": " In inverno, una temperatura fresca può rendere l'ambiente meno confortevole e piacevole."
+            }
+          ]
+        }
+      ]
+    },   
+    "humidity": {
+      "possibleValues": [                        
+        {
+          "value": "high",
+          "positive_effect_on_goal": [],
+          "negative_effect_on_goal": []
+        },
+        {
+          "value": "low",
+          "positive_effect_on_goal": [
+            {
+              "goal": "comfort",
+              "description": " In estate, un'umidità bassa può rendere l'ambiente più fresco e confortevole."
+            },
+            {
+              "goal": "health",
+              "description": "Un ambiente asciutto può ridurre la proliferazione di acari e muffe"
+            }
+          ],
+          "negative_effect_on_goal": []
+        }
+      ]
+    }            
+  }
+}

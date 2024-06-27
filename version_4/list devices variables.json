@@ -1,0 +1,68 @@
+{
+  "list_of_domains": {    
+    "light": {
+      "possibleValues": [                        
+        {
+          "value": "on",
+          "increase_variable": {
+            "illuminance": {
+              "confidence": "90%"
+            },
+            "energy": {
+              "confidence": "100%",
+              "value": "5w"           
+            }
+          }
+        },
+        {
+          "value": "off",
+          "decrease_env_var": {
+            "illuminance": {
+              "confidence": "90%"
+            }
+          }
+        }
+      ]
+    },
+    "fan": {
+      "possibleValues": [                        
+        {
+          "value": "on",
+          "increase_env_var": {
+            "aqi": {  
+              "confidence": "50%"
+            },
+            "energy": {
+              "confidence": "100%",
+              "value": "5w"
+            },
+            "sound_pressure": {
+              "confidence": "10%"
+            }
+          },
+          "decrease_env_var": {
+            "temperature": {
+              "confidence": "50%"
+            },
+            "humidity": {
+              "confidence": "100%"
+            }
+          }
+        }
+      ]
+    },
+    "switch": {
+      "possibleValues": [                        
+        {
+          "value": "on",
+          "increase_env_var": {
+            "energy": {
+              "confidence": "100%",
+              "value": "5w"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
