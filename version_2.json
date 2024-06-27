@@ -1,0 +1,197 @@
+{
+  "list_of_domains": {    
+    "light": {
+      "possibleValues": [                        
+        {
+          "value": "on",
+          "increase_variable": {
+            "illuminance": {
+              "confidence": "90%",
+              "positive_effect_on_goal": [
+                {
+                  "goal": "comfort",
+                  "description": "This device makes a more comfortable environment"
+                },
+                {
+                  "goal": "comfort",
+                  "description": "This device can make your daily tasks easier"
+                },
+                {
+                  "goal": "safety",
+                  "description": "This device can prevent accidents"
+                },
+                {
+                  "goal": "security",
+                  "description": "This device can deter criminals"
+                }
+              ],
+              "negative_effect_on_goal": [           
+                {
+                  "goal": "well-being",
+                  "description": "L'esposizione a luci intense, soprattutto in orari serali, può interferire con il ritmo circadiano e disturbare il sonno"
+                },
+                {
+                  "goal": "safety",
+                  "description": "L'esposizione a luci intense, soprattutto in orari serali, può interferire con il ritmo circadiano e disturbare il sonno"
+                }
+              ]
+            },
+            "energy": {
+              "confidence": "100%",
+              "value": "5w",
+              "negative_effect_on_goal": [           
+                {
+                  "goal": "energy saving",
+                  "description": "spreco",
+                  "when": [{
+                    "device_class": "motion",
+                    "state": "off",
+                    "same_environment": true
+                  }]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "value": "off",
+          "decrease_env_var": {
+            "illuminance": {
+              "confidence": "90%",
+              "negative_effect_on_goal": [
+                {
+                  "goal": "safety",
+                  "description": "This device can prevents accidents"
+                },
+                {
+                  "goal": "security",
+                  "description": "it might be easier for an attacker to understand when the house is empty and plan an intrusion"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "fan": {
+      "possibleValues": [                        
+        {
+          "value": "on",
+          "increase_env_var": {
+            "aqi": {  
+              "confidence": "50%",
+              "positive_effect_on_goal": [
+                {  
+                  "goal": "health",
+                  "description": "This device can reduce the buildup of indoor pollutants, improving air quality"
+                },
+                {
+                  "goal": "well-being",
+                  "description": "This device improves air circulation"
+                }
+              ],
+              "negative_effect_on_goal": [           
+                {
+                  "goal": "comfort",
+                  "description": "If overused, this device can cause discomfort due to excessive airflow or dryness"
+                }
+              ]
+            },
+            "energy": {
+              "confidence": "100%",
+              "value": "5w",
+              "negative_effect_on_goal": [
+                {
+                  "goal": "energy saving",
+                  "description": "This device can consume a significant amount of energy"
+                },
+                {
+                  "goal": "energy saving",
+                  "description": "spreco",
+                  "when": [{
+                    "device_class": "window",
+                    "state": "on",
+                    "same_environment": true
+                  }]
+                }
+              ]
+            },
+            "sound_pressure": {
+              "confidence": "10%",
+              "value": "5w",
+              "negative_effect_on_goal": [
+                {
+                  "goal": "well-being",
+                  "description": "This device can create noise"
+                }
+              ]
+            }
+          },
+          "decrease_env_var": {
+            "temperature": {
+              "confidence": "50%",
+              "positive_effect_on_goal": [
+                {
+                  "goal": "comfort",
+                  "description": "This device can help create a pleasant atmosphere in hot weather"
+                },
+                {
+                  "goal": "well-being",
+                  "description": "This device can help create a pleasant atmosphere in hot weather"
+                }
+              ],
+              "negative_effect_on_goal": [           
+                {
+                  "goal": "well-being",
+                  "description": "it can worse the environment in cold season"
+                }    
+              ]
+            },
+            "humidity": {
+              "confidence": "100%",
+              "positive_effect_on_goal": [
+                {
+                  "goal": "health",
+                  "description": "This device can help reduce humidity, decreasing the risk of mold and mildew"
+                },
+                {
+                  "goal": "health",
+                  "description": "This device can reduce the buildup of indoor pollutants, improving air quality"
+                }
+              ],
+              "negative_effect_on_goal": [
+                {
+                  "goal": "health",
+                  "description": "Ambiente troppo secco può essere negativo in base alla temperatura",
+                  "when": [{
+                    "device_class": "temperature",
+                    "state": ">20"
+                  }]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "switch": {
+      "possibleValues": [                        
+        {
+          "value": "on",
+          "increase_env_var": {
+            "energy": {
+              "confidence": "100%",
+              "value": "5w",
+              "negative_effect_on_goal": [
+                {
+                  "goal": "energy saving",
+                  "description": "This device can increase energy consumption if not managed properly"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  }
+}
