@@ -1,0 +1,321 @@
+{
+  "list_of_vars": {    
+    "illuminance": {
+      "negative_effect_on_goal": [           
+        {
+          "goal": "well-being",
+          "description": "L'esposizione a luci intense, soprattutto in orari serali, può interferire con il ritmo circadiano e disturbare il sonno",
+          //when: la luce è intensa ed è sera/notte 
+          "when": [{  
+            "action_domain": "light",
+            "action_state": "on",
+            "action_attribute": ">80",
+            "sensors": [
+              {
+                "sensor": "sensor.time",
+                "sensor_state": "night"
+              }
+            ]
+          }]
+        },
+        {
+          "goal": "health",
+          "description": "L'esposizione a luci intense, soprattutto in orari serali, può interferire con il ritmo circadiano e disturbare il sonno",
+          //when: la luce è intensa ed è sera/notte
+          "when": [{  
+            "action_domain": "light",
+            "action_state": "on",
+            "action_attribute": ">80",
+            "sensors": [
+              {
+                "sensor": "sensor.time",
+                "sensor_state": "night"
+              }
+            ]
+          }]
+        },
+        {
+          "goal": "comfort",
+          "description": "Una luce insufficiente può causare affaticamento visivo e disagio, rendendo difficile vedere e lavorare",
+          //when: la luce è bassa e stai lavorando
+          "when": [{ 
+            "action_domain": "light",
+            "action_state": "on",
+            "action_attribute": "<20",
+            "sensors": [
+              {
+                "sensor": "binary_sensor.workday_sensor",
+                "sensor_state": "workdays"
+              },
+              {
+                "sensor": "motion",
+                "sensor_state": "on",
+                "same_environment": true
+              }
+            ]
+          }]
+        },
+        {
+          "goal": "safety",
+          "description": "Una luminosità insufficiente può aumentare il rischio di cadute e incidenti, poiché gli ostacoli e i pericoli non sono facilmente visibili",
+          //when: la luce è bassa e sei nella stessa stanza della luce
+          "when": [{ 
+            "action_domain": "light",
+            "action_state": "on",
+            "action_attribute": "<20",
+            "sensors": [
+              {
+                "sensor": "motion",
+                "sensor_state": "on",
+                "same_environment": true
+              }
+            ]
+          }]
+        },
+        {
+          "goal": "security",
+          "description": "La scarsa illuminazione aumenta il rischio di incidenti e rende più facile nascondersi per potenziali intrusi, riducendo la sicurezza",
+          //when: la luce è bassa e non sei a casa
+          "when": [{ 
+            "action_domain": "light",
+            "action_state": "on",
+            "action_attribute": "<10",
+            "sensors": [
+              {
+                "sensor": "person",
+                "sensor_state": "not_home"
+              }
+            ]
+          }]
+        }
+      ]
+    },
+    "energy": {
+      "negative_effect_on_goal": [           
+        {
+          "goal": "energy saving",
+          "description": "spreco",
+          //when: purificatore/ventilatore acceso e finestra aperta nella stessa area
+          "when": [{
+            "action_domain": "fan",
+            "action_state": "on",
+            "sensors": [
+              {
+                "sensor": "window",
+                "sensor_state": "on",
+                "same_environment": true
+              }
+            ]                
+          }]
+        },
+        {
+          "goal": "energy saving",
+          "description": "This device consumes a significant amount of energy",
+          //when: il dispositivo consuma più di tot vatt
+          "when": [{
+            "sensors": [
+              {
+                "sensor": "energy",
+                "sensor_state": ">80"
+              }
+            ]  
+          }]
+        },
+        {
+          "goal": "energy saving",
+          "description": "spreco",
+          //when: la luce è accesa e non c'è nessuno nella stanza
+          "when": [{
+            "action_domain": "light",
+            "action_state": "on",
+            "sensors": [
+              {
+                "sensor": "motion",
+                "sensor_state": "off",
+                "same_environment": true
+              }
+            ]
+          }]
+        }
+      ]
+    },
+    "aqi": {
+      "negative_effect_on_goal": [
+          {
+            "goal": "comfort",
+            "description": "La presenza di inquinanti genera cattivi odori che rendono l'ambiente sgradevole",
+            //when: quantità di inquinanti superiore a un tot / bassa qualità dell'aria
+            "when": [{
+              "sensors": [
+                {
+                  "sensor": "aqi",
+                  "sensor_state": "<20",
+                  "variable_effect": "decrease"
+                }
+              ]
+            }]
+          },
+          {
+            "goal": "health",
+            "description": "La scarsa qualità dell'aria può causare o aggravare problemi respiratori come asma, bronchite e altre malattie polmonari",
+            //when: quantità di inquinanti superiore a un tot / bassa qualità dell'aria
+            "when": [{
+              "sensors": [
+                {
+                  "sensor": "aqi",
+                  "sensor_state": "low"
+                }
+              ]
+            }]
+          },
+          {
+            "goal": "health",
+            "description": "La scarsa qualità dell'aria può causare disagio fisico come sensazione di soffocamento, mal di testa e affaticamento",
+            //when: quantità di inquinanti superiore a un tot / bassa qualità dell'aria
+            "when": [{
+              "sensors": [
+                {
+                  "sensor": "aqi",
+                  "sensor_state": "low"
+                }
+              ]
+            }]
+          }
+      ]
+    },
+    "sound_pressure": {
+      "negative_effect_on_goal": [
+        {  
+          "goal": "comfort",
+          "description": "Rumori forti possono causare disagio e rendere l'ambiente sgradevole",
+          //when: il livello di rumore è alto
+          "when": [{
+            "sensors": [
+              {
+                //di giorno quando è maggiore di 50
+                "sensor": "sound_pressure",
+                "sensor_state": "<20",
+                //di notte quando è maggiore di 20
+              }
+            ]
+          }]
+        },
+        {
+          "goal": "well-being",
+          "description": " Esposizione continua a rumori forti può aumentare i livelli di stress",
+          //when: il livello di rumore è alto
+          "when": [{
+            "sensors": [
+              {
+                "sensor": "sound_pressure",
+                "sensor_state": "high"
+              }
+            ]
+          }]
+        },
+        {
+          "goal": "health",
+          "description": "Esposizione prolungata a rumori forti può causare danni all'udito.",
+          //when: il livello di rumore è alto
+          "when": [{
+            "sensors": [
+              {
+                "sensor": "sound_pressure",
+                "sensor_state": "high",
+                "same_environment": true
+              }
+            ]
+          }]
+        }
+      ]
+    },
+    "temperature": {    
+      "negative_effect_on_goal": [
+        {  
+          "goal": "comfort",
+          "description": "Temperature troppo elevate possono causare disagio, sudorazione e irritabilità.",
+          //when: temperatura supera un certo livello
+          "when": [{
+            "sensors": [
+              {
+                "sensor": "temperature",
+                "sensor_state": ">25",
+                "variable_effect": "increase"
+              }
+            ]
+          }]
+        },
+        {  
+          "goal": "well-being",
+          "description": "Un ambiente troppo caldo può causare affaticamento, ridotta concentrazione e sonnolenza.",
+          //when: temperatura supera un certo livello
+          "when": [{
+            "sensors": [
+              {
+                "sensor": "temperature",
+                "sensor_state": "high"
+              }
+            ]
+          }]
+        },
+        {
+          "goal": "comfort",
+          "description": " In estate, una temperatura calda può rendere l'ambiente meno confortevole e piacevole.",
+          //when: temperatura supera un certo livello ed è estate
+          "when": [{
+            "sensors": [
+              {
+                "sensor": "temperature",
+                "sensor_state": ">25",
+                "variable_effect": "increase"
+              },
+              {
+                "sensor": "date",
+                "sensor_state": "summer"
+              }
+            ]
+          }]
+        },
+        {
+          "goal": "comfort",
+          "description": " In inverno, una temperatura fresca può rendere l'ambiente meno confortevole e piacevole.",
+          //when: temperatura è al di sotto di un certo livello ed è inverno
+          "when": [{
+            "sensors": [
+              {
+                "sensor": "temperature",
+                "sensor_state": "<25",
+                "variable_effect": "decrease"
+              },
+              {
+                "sensor": "date",
+                "sensor_state": "winter"
+              }
+            ]
+          }]
+        }
+      ]
+    },   
+    "humidity": {                       
+      "negative_effect_on_goal": [
+        {
+          "goal": "comfort",
+          "description": "L'umidità elevata può far sentire le persone appiccicose e scomode, soprattutto durante i mesi estivi",
+          "when": [{
+            "sensors": [
+              {
+                "sensor": "humidity",
+                "sensor_state": ">80",
+                "variable_effect": "increase"
+              },
+              {
+                "sensor": "date",
+                "sensor_state": "summer"
+              }
+            ]
+          }]
+        }
+      ]
+    }            
+  }
+}

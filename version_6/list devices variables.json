@@ -1,0 +1,33 @@
+{
+  "list_of_domains": {    
+    "light": {
+      "possibleValues": [                        
+        {
+          "value": "on",
+          "increase_variable": ["illuminance", "energy"]
+        },
+        {
+          "value": "off",
+          "decrease_env_var": ["illuminance"]
+        }
+      ]
+    },
+    "fan": {
+      "possibleValues": [                        
+        {
+          "value": "on",
+          "increase_env_var": ["aqi", "energy", "sound_pressure"],
+          "decrease_env_var": ["temperature", "humidity"]
+        }
+      ]
+    },
+    "switch": {
+      "possibleValues": [                        
+        {
+          "value": "on",
+          "increase_env_var": ["energy"]
+        }
+      ]
+    }
+  }
+}
