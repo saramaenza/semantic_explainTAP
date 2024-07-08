@@ -3,29 +3,29 @@
     "light": {
       "possibleValues": [                        
         {
-          "value": "on",
+          "value": "turn_on",
           "increase_variable": ["illuminance", "energy"]
         },
         {
-          "value": "off",
-          "decrease_env_var": ["illuminance"]
+          "value": "turn_off",
+          "decrease_variable": ["illuminance"]
         }
       ]
     },
     "fan": {
       "possibleValues": [                        
         {
-          "value": "on",
-          "increase_env_var": ["aqi", "energy", "sound_pressure"],
-          "decrease_env_var": ["temperature", "humidity"]
+          "value": "turn_on",
+          "increase_variable": ["aqi", "energy", "sound_pressure"],
+          "decrease_variable": ["temperature", "humidity"]
         }
       ]
     },
     "switch": {
       "possibleValues": [                        
         {
-          "value": "on",
-          "increase_env_var": ["energy"]
+          "value": "turn_on",
+          "increase_variable": ["energy"]
         }
       ]
     }
